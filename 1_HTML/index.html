@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This page is use for learning HTML Basic to advance.">
+    <meta name="keywords" content="HTML, website development, web development">
+    <meta name="author" content="Deep Makhasana">
+    <meta name="revised" content="deep, 02/08/2024">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        li {
+            list-style: none;
+            font-size: 0.95rem;
+        }
+        .container, header {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        h2 {
+            margin-bottom: 1.2rem;
+        }
+        header {
+            margin: 1rem auto;
+        }
+        section {
+            padding: 2rem 0;
+        }
+        th {
+            padding: 0.4rem 0;
+        }
+        td {
+            padding: 0.2rem 1rem;
+        }
+        table, th, td {
+            border: 1px solid rgb(36, 36, 36);
+            border-collapse: collapse;
+        }
+        input, textarea, select {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type=submit] {
+            background-color: #ED7129;
+            border: none;
+            color: #fff;
+        }
+        video {
+            width: 100%;
+            height: auto;
+        }
+        #audioPlayer {
+            display: block;
+        }
+        audio {
+            max-height: 46px;
+            max-width: 100%;
+            margin: auto;
+            object-fit: contain;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            letter-spacing: 1.2px;
+        }
+    </style>
+</head>
+<body>
+    <div>div</div>
+    <p>para</p>
+    <span>span</span>
+    <!-- header - Navigation bar -->
+    <header class="flex justifyBetween">
+        <div id="logo">
+            <h1>HTML CheatSheet</h1>
+        </div>
+        <nav>
+            <ul class="flex">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#table">Table</a></li>
+                <li><a href="#iframe">Iframe</a></li>
+                <li><a href="#background">Background</a></li>
+                <li><a href="#form">Form</a></li>
+                <li><a href="#media">Media</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Home section -->
+        <section id="home">
+            <div class="homeSection">
+                <div>
+                    <img src="https://www.oxfordwebstudio.com/user/pages/06.da-li-znate/sta-je-html/sta-je-html.jpg" alt="html" style="max-width: 100%; object-fit: contain;">
+                </div>
+                <div>
+                    <h1 style="margin-bottom: 0.5rem; font-size: 1.4rem;">Aubout HTML</h1>
+                    <p class="textJustify" style="margin-bottom: 1rem; line-height: 1.2; color: #333;">Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It defines the content and structure of web content. It is often assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.</p>
+                    <button class="btn"><a href="https://www.w3schools.com/html/" target="_top">Start Learning</a></button>
+                    <button class="btn"><a href="about.html" target="_top">Start Learning</a></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Table section -->
+        <section id="table">
+            <h2>Table of contant</h2>
+            <div style="overflow-x: scroll;">
+                <table style="width: 100%;">
+                    <!-- <thead> -->
+                        <tr>
+                            <th>Company</th>
+                            <th>Contact</th>
+                            <th>Country</th>
+                        </tr>
+                    <!-- </thead> -->
+                    <tbody>
+                        <tr>
+                            <td>Alfreds Futterkiste</td>
+                            <td>Maria Anders</td>
+                            <td>Germany</td>
+                        </tr>
+                        <tr>
+                            <td>Centro comercial Moctezuma</td>
+                            <td>Francisco Chang</td>
+                            <td>Mexico</td>
+                        </tr>
+                        <tr>
+                            <td>Alfreds Futterkiste</td>
+                            <td>Maria Anders</td>
+                            <td>Germany</td>
+                        </tr>
+                        <tr>
+                            <td>Centro comercial Moctezuma</td>
+                            <td>Francisco Chang</td>
+                            <td>Mexico</td>
+                        </tr>
+                        <tr>
+                            <td>Alfreds Futterkiste</td>
+                            <td>Maria Anders</td>
+                            <td>Germany</td>
+                        </tr>
+                        <tr>
+                            <td>Centro comercial Moctezuma</td>
+                            <td>Francisco Chang</td>
+                            <td>Mexico</td>
+                        </tr>
+                        <tr>
+                            <td>Alfreds Futterkiste</td>
+                            <td>Maria Anders</td>
+                            <td>Germany</td>
+                        </tr>
+                        <tr>
+                            <td>Centro comercial Moctezuma</td>
+                            <td>Francisco Chang</td>
+                            <td>Mexico</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Table section -->
+        <section id="iframe">
+            <h2>Iframe Use Case</h2>
+            <div class="iframeSectiom">
+                <div style="width: 50%;">
+                    <iframe class="hideScrollbar" style="width: 100%; height: 350px;" src="https://www.youtube.com/embed/_Mz69752y_8?si=7U4gPrvxVF014N3c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div style="width: 50%; border: 2px dashed #333;">
+                    <iframe class="hideScrollbar" style="width: 100%; height: 350px;" src="about.html" frameborder="0"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Background image section -->
+        <section id="background">
+            <h2>Use Background Image</h2>
+            <div class="bgImageSectiom">
+                <h3>Image as <br /> Background</h3>
+            </div>
+        </section>
+
+        <!-- Form section -->
+        <section id="form">
+            <h2>Feel Free to Contact Us</h2>
+            <div class="contactSectiom">
+                <form method="post">
+                    <div>
+                        <label for="name">Full Name</label>
+                        <input type="text" name="name" placeholder="Jone Dave">
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" placeholder="jone@gmail.com">
+                    </div>
+                    <div>
+                        <label for="number">Number</label>
+                        <input type="number" name="number" placeholder="+91 7086954123">
+                    </div>
+                    <div>
+                        <label for="date">Date</label>
+                        <input type="date" name="date" id="date-input">
+                    </div>
+                    <div>
+                        <label for="service">Service</label>
+                        <select name="service">
+                            <option value="">Select service</option>
+                            <option value="ui/ux">UI/UX</option>
+                            <option value="web">Web development</option>
+                            <option value="app">Application development</option>
+                            <option value="product">Product design</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="service">Message</label>
+                        <textarea name="message" placeholder="Feel free to ask your question!" rows="6"></textarea>
+                    </div>
+                    <input type="submit" value="Submit" style="width: 120px;">
+                </form>
+            </div>
+        </section>
+
+        <!-- media section -->
+        <section id="media">
+            <h2>Media File Handling</h2>
+            <div class="mediaSectiom">
+                <div>
+                    <h3 style="margin-bottom: 1rem;">Video</h3>
+                    <div>
+                        <video src="assets/video-file.mp4" controls ></video>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 1rem;">Audio</h3>
+                    <div id="audioPlayer">
+                        <audio controls autoplay muted src="./assets/audio-file.mp3"></audio>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <p>© <span id="currentYear"></span> HTML CheatSheet, All Right Reserved. Designed By Deep Makhasana</p>
+    </footer>
+
+    
+    <!-- JavaScript -->
+    <script>
+        // Get the current date
+        const today = new Date();
+        
+        // Format the date to YYYY-MM-DD
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+        const day = String(today.getDate()).padStart(2, '0');
+        const formattedDate = `${year}-${month}-${day}`;
+        
+        // Set the value of the date input to today's date
+        document.getElementById('date-input').value = formattedDate;
+
+        //set current year in footer
+        document.getElementById('currentYear').innerText = year;
+    </script>
+</body>
+</html>

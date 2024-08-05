@@ -1,0 +1,156 @@
+* {
+
+    box-sizing: border-box;
+}
+
+/* scrollbar style */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+/* ----------------------------------------------- */
+
+/* reuseable classes */
+
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.justifyBetween {
+    justify-content: space-between;
+}
+
+.textJustify {
+    text-align: justify;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    background-color: #ED7129;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn a {
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+/* --------------------------------------------------------- */
+
+/* home section */
+.homeSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+
+/* --------------------------------------------------------------- */
+
+/* iframe Sectiom */
+.iframeSectiom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* --------------------------------------------------------------- */
+
+/* bg Image Sectiom */
+.bgImageSectiom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    background: linear-gradient(
+    rgba(0, 0, 0, 0.6), /* semi-transparent overlay */
+    rgba(0, 0, 0, 0.6)
+    ), url("https://img.freepik.com/free-vector/realistic-neon-lights-background_23-2148907367.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.bgImageSectiom h3 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #FFFF;    
+}
+
+/* --------------------------------------------------------------- */
+
+/* Contact Sectiom */
+.contactSectiom {
+    background-color: #F2F2F2;
+    padding: 2rem 1.6rem;
+    border-radius: 10px;
+}
+.contactSectiom form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contactSectiom label {
+    font-size: 0.95rem;
+}
+
+.contactSectiom div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* --------------------------------------------------------------- */
+
+/* media section */
+.mediaSectiom {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;   
+}
+
+
+/* --------------------------------------------------------------- */
+
+
+/* media query */
+@media (max-width: 600px) {
+    nav {
+        display: none;
+    }
+    .homeSection {
+        grid-template-columns: 1fr;
+    }
+    .mediaSectiom {
+        grid-template-columns: 1fr;  
+    }
+}
