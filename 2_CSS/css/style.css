@@ -6,7 +6,6 @@
 
 /* comman tag style */
 html {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.95rem;
   letter-spacing: 1px;
 }
@@ -22,7 +21,12 @@ a {
 
 img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+main {
+  font-family: "Work Sans", sans-serif;
 }
 
 
@@ -45,7 +49,7 @@ img {
 
 /* header and navbar */
 header {
-  background-color: #fbfbfb;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #logo {
@@ -88,8 +92,83 @@ nav ul li a:hover {
 }
 
 
+/* hero section */
+#hero {
+  width: 100%;
+  height: calc(100vh - 73px);
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+#hero > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero-info {
+  width: 50%;
+  padding-left: 2rem;
+}
+
+.hero-info .hero-title {
+  font-size: 3rem;
+  font-weight: 200;
+  color: #333;
+  /* line-height: 1.2; */
+  margin-bottom: 1.5rem;
+}
+
+.hero-info .hero-title span {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.hero-info .hero-tagline {
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  color: #5e5e5e;
+}
+
+.hero-info .hero-coffee-img {
+  width: 16%;
+}
+
+.hero-img {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-illustration {
+  width: 90%;
+}
+
+
+
 /* media query */
+@media (max-width: 768px) {
+  #hero {
+    flex-direction: column;
+  }
+
+  .hero-info, .hero-img {
+    width: 100%;
+  }
+
+  .hero-illustration {
+    width: 60%;
+  }
+}
+
+
 @media (max-width: 900px) {
+  html {
+    font-size: 14px;
+  }
   nav ul li {
     padding: 0.5rem 2rem;
     background-color: rgb(233, 233, 233);
@@ -97,6 +176,7 @@ nav ul li a:hover {
 
   nav ul {
     flex-direction: column;
+    display: none;
   }
 
   .navbar {
