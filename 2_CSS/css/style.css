@@ -30,11 +30,13 @@ main {
 }
 
 
-/* comman style class */
+/* Uitility class */
 .container {
   max-width: 1280px;
   margin: 0 auto;
 }
+
+
 
 
 /* google font style */
@@ -70,13 +72,11 @@ nav ul li {
   align-items: center;
 }
 
-nav ul li a {
-  transition: all 0.3s ease-in-out;
-}
 
 nav ul li a:hover {
   color: #1107A4;
   font-weight: 700;
+  transition: all 0.5s ease-in-out;
 }
 
 .navIcon {
@@ -116,7 +116,6 @@ nav ul li a:hover {
   font-size: 3rem;
   font-weight: 200;
   color: #333;
-  /* line-height: 1.2; */
   margin-bottom: 1.5rem;
 }
 
@@ -147,10 +146,64 @@ nav ul li a:hover {
   width: 90%;
 }
 
+.toggle-btn {
+  display: none;
+}
+
+/* [END] hero section */
+
+/* founder section */
+#founder {
+  margin: 3rem auto;
+  width: 100%;
+  display: flex;
+  gap: 4rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#founder > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#founder .founder-info {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.founder-img {
+  width: 220px;
+  height: 220px;
+}
+
+.founder-img img{
+  width: 100%;
+  height: auto;
+  border: 5px solid #3F3D56;
+  border-radius: 50%;
+}
+
+.founder-tagline {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.founder-detail {
+  color: #5a5a5a;
+}
+
+/* [END] founder section */
 
 
-/* media query */
+/* media query - small device */
 @media (max-width: 768px) {
+  /* hero section */
   #hero {
     flex-direction: column;
   }
@@ -164,24 +217,75 @@ nav ul li a:hover {
   }
 }
 
+/* [END] small device */
 
+
+
+/* meddium device */
 @media (max-width: 900px) {
   html {
     font-size: 14px;
   }
+
+  /* navbar */
+  .toggle-btn {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  .toggle-btn:hover, .toggle-btn:focus {
+    color: #1107A4;
+    font-weight: 700;
+  }
+
+  :is(header:hover, header:focus-within) nav {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    transform-origin: top center;
+    background-color: rgb(238, 238, 238);
+    width: 100%;
+    animation: showMenu 0.5s ease-in-out forwards;
+  }
+
+  @keyframes showMenu {
+    0% {
+      transform: scaleY(0);
+    }
+    80% {
+      transform: scaleY(1.2);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+
   nav ul li {
-    padding: 0.5rem 2rem;
-    background-color: rgb(233, 233, 233);
+    padding: 0 2rem;
   }
 
   nav ul {
     flex-direction: column;
-    display: none;
+    display: flex;
+    padding: 1rem 0;
   }
 
   .navbar {
     flex-direction: column;
-    gap: 2rem;
     align-items: flex-start;
   }
+
+  #founder {
+    flex-direction: column;
+  }
 }
+
+/* [END] meddium device */
