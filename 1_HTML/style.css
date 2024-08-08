@@ -9,6 +9,18 @@ html {
     scroll-behavior: smooth;
 }
 
+/* .parent {
+    width: 500px;
+    background-color: #ED7129;
+    height: 500px;
+}
+
+.child {
+    background-color: #5e5e5e;
+    width: 100vw;
+    height: 100vh;
+} */
+
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
