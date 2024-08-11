@@ -1,160 +1,515 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Design by Bootstrap</title>
-    <!-- Bootstrap style CDN -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <!-- Bootstrap style -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- custom style -->
+    <link rel="stylesheet" href="./css/custom-style.css" />
+  </head>
+  <body>
+    <!-- header with hero section -->
+    <div class="hero-container">
+      <div class="hero-content">
+        <header>
+          <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="#">.Learner</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-lg-end" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav mb-2 mb-lg-0">
-                        <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Courses
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Frontend</a></li>
-                                <li><a class="dropdown-item" href="#">Backend</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Mobile App Development</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="pages/course.html">My courses</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Feedback</a>
-                        </li>
-                    </ul>
-                </div>
+              <a class="navbar-brand text-white fw-medium fs-4" href="index.html">HV INTERIOR</a>
+              <button
+                class="navbar-toggler border-0"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <img src="./assets/icons/toggle-menu.svg" width="20" height="20" alt="=" />
+              </button>
+              <div class="collapse navbar-collapse justify-content-lg-end" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#about">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">Portfolio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-        </nav>
-    </header>
+          </nav>
+        </header>
+
+        <section id="hero" class="container d-flex justify-content-center align-items-center flex-column gap-2">
+          <div>
+            <h1 class="text-light display-2">Welcome on <br />HV Interior design studio</h1>
+            <p class="fs-4 fw-medium mt-2" style="color: #bbbbbb; letter-spacing: 1.2px">
+              Interior Design & Architecture Portfolio
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
 
     <main>
-        <!-- slider -->
-        <section>
-            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="https://images.pexels.com/photos/4443160/pexels-photo-4443160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="courses">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                    </div>
-                    </div>
-                    <div class="carousel-item"  data-bs-interval="2000">
-                    <img src="https://images.pexels.com/photos/414628/pexels-photo-414628.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="courses">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </div>
-                    </div>
-                    <div class="carousel-item">
-                    <img src="https://images.pexels.com/photos/4443160/pexels-photo-4443160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="courses">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+      <!-- about section  -->
+      <section id="about" class="container my-5">
+        <h2 class="display-6 py-2 py-lg-4">About Us</h2>
+        <div class="row d-flex align-items-center my-2 my-lg-5 g-4">
+          <div class="col-12 col-lg-6">
+            <h2>Hitesh Vadgama</h2>
+            <p>Interior Designer</p>
+            <p style="text-align: justify">
+              HV Interior Design & Architecture is a specializes in creating stylish and functional spaces. We design
+              the interiors of homes, villa, offices, restaurant and other buildings, focusing on both the look and
+              practicality of each space. Our work involves choosing colors, furniture, layouts, and materials that fit
+              the client's needs and preferences, making sure that the space is both beautiful and useful.
+            </p>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="w-50 mx-auto">
+              <img src="./assets/hiteshvadgama.jpg" class="img-fluid rounded-circle" alt="Hitesh Vadgama" />
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- courses secion -->
-         <section id="courses" class="container">
-            <h1 class="my-4">Courses</h1>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 col-lg-3 p-2">
-                    <div class="card">
-                        <img src="https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="node js">
-                        <div class="card-body">
-                            <h5 class="card-title">Backend Mastry - Node js</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="pages/course.html" class="btn btn-primary">Enroll Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-lg-3 p-2">
-                    <div class="card">
-                        <img src="https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="node js">
-                        <div class="card-body">
-                            <h5 class="card-title">Backend Mastry - Node js</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="pages/course.html" class="btn btn-primary">Enroll Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-lg-3 p-2">
-                    <div class="card">
-                        <img src="https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="node js">
-                        <div class="card-body">
-                            <h5 class="card-title">Backend Mastry - Node js</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="pages/course.html" class="btn btn-primary">Enroll Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-lg-3 p-2">
-                    <div class="card">
-                        <img src="https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="node js">
-                        <div class="card-body">
-                            <h5 class="card-title">Backend Mastry - Node js</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="pages/course.html" class="btn btn-primary">Enroll Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-lg-3 p-2">
-                    <div class="card">
-                        <img src="https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="node js">
-                        <div class="card-body">
-                            <h5 class="card-title">Backend Mastry - Node js</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="pages/course.html" class="btn btn-primary">Enroll Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-lg-3 p-2">
-                    <div class="card">
-                        <img src="https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="node js">
-                        <div class="card-body">
-                            <h5 class="card-title">Backend Mastry - Node js</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="pages/course.html" class="btn btn-primary">Enroll Now</a>
-                        </div>
-                    </div>
-                </div>
+      <!-- services section  -->
+      <section id="services" class="container my-5">
+        <h2 class="display-6 py-3 py-lg-4">Our Services</h2>
+        <div class="row d-flex align-items-start my-2 my-lg-4 g-4">
+          <div class="col-md-6 col-12">
+            <div class="w-100 mb-4">
+              <img
+                src="./assets/residenticl-interior.jpeg"
+                style="max-height: 300px"
+                class="img-fluid rounded-2"
+                alt="Hitesh Vadgama"
+              />
             </div>
-         </section>
+            <h2>Residential Interior designing</h2>
+            <p class="fw-semibold">Home and villa Interior Design</p>
+            <p style="text-align: justify">
+              Residential interior design is about creating comfortable, stylish, and functional living spaces. It
+              involves choosing the right colors, furniture, and layouts to make a home feel welcoming and reflect the
+              homeowner's personal style. The goal is to design a space that is both beautiful and practical for
+              everyday living.
+            </p>
+          </div>
+          <div class="col-md-6 col-12">
+            <div class="w-100 mb-4">
+              <img
+                src="./assets/commercial-interior.jpg"
+                style="max-height: 300px"
+                class="img-fluid rounded-2"
+                alt="Hitesh Vadgama"
+              />
+            </div>
+            <h2>Commercial Interior Designing</h2>
+            <p class="fw-semibold">Office, restaurant and hospital Interior Design</p>
+            <p style="text-align: justify">
+              Commercial interior design focuses on creating functional and appealing spaces for businesses. It involves
+              designing layouts, choosing furnishings, and selecting decor that enhances the work environment, improves
+              efficiency, and reflects the brand’s identity. The goal is to create a professional and engaging space
+              that meets the needs of both employees and clients.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio section  -->
+      <section id="portfolio" class="container my-5">
+        <h2 class="display-6 py-3 py-lg-4">Portfolio</h2>
+        <div class="row d-flex align-items-start my-2 my-lg-4 g-4">
+          <div class="col-md-6 col-lg-4 col-12">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying"
+                  data-bs-slide-to="3"
+                  aria-current="true"
+                  aria-label="Slide 4"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying"
+                  data-bs-slide-to="4"
+                  aria-label="Slide 5"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying"
+                  data-bs-slide-to="5"
+                  aria-label="Slide 6"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying"
+                  data-bs-slide-to="6"
+                  aria-current="true"
+                  aria-label="Slide 7"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying"
+                  data-bs-slide-to="7"
+                  aria-label="Slide 8"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying"
+                  data-bs-slide-to="8"
+                  aria-label="Slide 9"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying"
+                  data-bs-slide-to="9"
+                  aria-label="Slide 10"
+                ></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="./assets/projects/p1/p1.1.jpeg" class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/projects/p1/p1.2.jpeg" class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/projects/p1/p1.3.jpeg" class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/projects/p1/p1.4.jpeg" class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/projects/p1/p1.5.jpeg" class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/projects/p1/p1.6.jpeg" class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/projects/p1/p1.7.jpeg" class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/projects/p1/p1.8.jpeg" class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/projects/p1/p1.9.jpeg" class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/projects/p1/p1.10.jpeg" class="d-block w-100" alt="..." />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev"
+              >
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next"
+              >
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 col-12">
+            <div id="carouselExampleAutoplaying1" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying1"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying1"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying1"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying1"
+                  data-bs-slide-to="3"
+                  aria-current="true"
+                  aria-label="Slide 4"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying1"
+                  data-bs-slide-to="4"
+                  aria-label="Slide 5"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying1"
+                  data-bs-slide-to="5"
+                  aria-label="Slide 6"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying1"
+                  data-bs-slide-to="6"
+                  aria-current="true"
+                  aria-label="Slide 7"
+                ></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="./assets/projects/p2/p2.1.jpeg" class="d-block w-100" alt="project-2" />
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/projects/p2/p2.2.jpeg" class="d-block w-100" alt="project-2" />
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/projects/p2/p2.3.jpeg" class="d-block w-100" alt="project-2" />
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/projects/p2/p2.4.jpeg" class="d-block w-100" alt="project-2" />
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/projects/p2/p2.5.jpeg" class="d-block w-100" alt="project-2" />
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/projects/p2/p2.6.jpeg" class="d-block w-100" alt="project-2" />
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/projects/p2/p2.7.jpeg" class="d-block w-100" alt="project-2" />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleAutoplaying1"
+                data-bs-slide="prev"
+              >
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleAutoplaying1"
+                data-bs-slide="next"
+              >
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 col-12">
+            <div id="carouselExampleAutoplaying2" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying2"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying2"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying2"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying2"
+                  data-bs-slide-to="3"
+                  aria-current="true"
+                  aria-label="Slide 4"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying2"
+                  data-bs-slide-to="4"
+                  aria-label="Slide 5"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying2"
+                  data-bs-slide-to="5"
+                  aria-label="Slide 6"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying2"
+                  data-bs-slide-to="6"
+                  aria-current="true"
+                  aria-label="Slide 7"
+                ></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="./assets/projects/p3/p3.1.jpeg" class="d-block w-100" alt="project-2" />
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/projects/p3/p3.2.jpeg" class="d-block w-100" alt="project-2" />
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/projects/p3/p3.3.jpeg" class="d-block w-100" alt="project-2" />
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/projects/p3/p3.4.jpeg" class="d-block w-100" alt="project-2" />
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/projects/p3/p3.5.jpeg" class="d-block w-100" alt="project-2" />
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/projects/p3/p3.6.jpeg" class="d-block w-100" alt="project-2" />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleAutoplaying2"
+                data-bs-slide="prev"
+              >
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleAutoplaying2"
+                data-bs-slide="next"
+              >
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- contact footer  -->
+      <footer id="contact" class="container mt-5">
+        <h2 class="display-6 py-3 py-lg-4">Contact Us</h2>
+        <div class="row d-flex align-items-start my-2 my-lg-4 g-4">
+          <div class="col-md-6 col-12 d-flex gap-4 align-items-center">
+            <div class="mb-4">
+              <img
+                src="./assets/icons/phone.svg"
+                style="width: 24px; height: 24px"
+                class="img-fluid rounded-2"
+                alt="call"
+              />
+            </div>
+            <div>
+              <h5>Call Us</h5>
+              <p>+91 9824865239</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-12 d-flex gap-4 align-items-center">
+            <div class="mb-4">
+              <img
+                src="./assets/icons/whatsapp.svg"
+                style="width: 28px; height: 28px"
+                class="img-fluid rounded-2"
+                alt="call"
+              />
+            </div>
+            <div>
+              <h5>Whatsapp</h5>
+              <p>+91 9824865239</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-12 d-flex gap-4 align-items-center">
+            <div class="mb-4">
+              <img
+                src="./assets/icons/email.svg"
+                style="width: 24px; height: 24px"
+                class="img-fluid rounded-2"
+                alt="call"
+              />
+            </div>
+            <div>
+              <h5>Email</h5>
+              <p>interiorhv@gmail.com</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-12 d-flex gap-4 align-items-center">
+            <div class="mb-4">
+              <img
+                src="./assets/icons/location.svg"
+                style="width: 28px; height: 28px"
+                class="img-fluid rounded-2"
+                alt="call"
+              />
+            </div>
+            <div>
+              <h5>Location</h5>
+              <p>714, Sanskar height, near umiya chock, 150' ring road, Rajkot.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5 py-2">
+          <p class="text-center">
+            © 2024 HV Interior, All Right Reserved. Designed By
+            <a href="https://deepmakhasana.netlify.app/" class="text-dark">Deep Makhasana</a>
+          </p>
+        </div>
+      </footer>
     </main>
 
-    <!-- Bootstrap script CDN -->
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
+    <!-- Bootstrap script -->
+    <script src="./js/bootstrap.min.js"></script>
+  </body>
 </html>
