@@ -10,7 +10,7 @@ const taskContainer = document.getElementById("taskContainer");
 
 // -------------------------------------------------------------------------
 
-// form data
+// form data - cretae new task
 function createTask(e) {
   e.preventDefault();
 
@@ -85,6 +85,7 @@ function createElemetTask(id, task, isCompleted) {
   if (isCompleted) {
     mainTask.setAttribute("style", "text-decoration: line-through;");
   }
+  
   // edit boutton
   const editBtn = document.createElement("span");
   editBtn.setAttribute("class", "input-group-text");
@@ -118,6 +119,12 @@ function createElemetTask(id, task, isCompleted) {
 // todo list display
 const LoadTaskList = () => {
   const taskList = getLocalstorage("tasks");
+  if (taskList.length <= 0) {
+    taskContainer.innerText = "Create new task, You have not task";
+    taskContainer.style.textAlign = "center";
+    taskContainer.style.color = "#333";
+    taskContainer.style.fontSize = "0.9rem";
+  }
   taskList.map((task) => {
     const newtask = createElemetTask(task.id, task.task, task.isCompleted);
     taskContainer.appendChild(newtask);
@@ -153,6 +160,7 @@ function handelTaskUpdate(id) {
   if (!inputTask.getAttribute("data-temp")) {
     inputTask.disabled = false;
     inputTask.focus();
+    inputTask.setAttribute("style", "text-decoration: none;");
     inputTask.setAttribute("data-temp", "editing");
   } else {
     const updatedPaylod = previousTasks.map((task) => {
@@ -167,6 +175,8 @@ function handelTaskUpdate(id) {
     setLocalstorage("tasks", updatedPaylod);
 
     inputTask.blur();
+    inputTask.setAttribute("data-temp", "");
+    inputTask.setAttribute("style", "text-decoration: line-through;");
     inputTask.disabled = true;
   }
 }
