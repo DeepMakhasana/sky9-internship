@@ -1,24 +1,25 @@
 
-13/08/2024 Friday after college and Today Completed Work:
+14/08/2024 Friday after college and Today Completed Work:
 
-    - Filter, map and reduce
-    - Events in javascript
-    - Taking Input From User In JavaScript
-    - How to create a new element
-    - Edit and remove DOM elements
-    - JavaScript Arrow Functions
-
-    Project [Task Manager - Completed]:
-    - https://deepmakhasana.github.io/sky9-internship/4_JS/todo.html
-
-Planed of Today after college:
+    - Closure In JavaScript
     - Promises In JavaScript
     - fetch API In JavaScript
     - Timing Function In JavaScript
     - Async Await JavaScript
     - Error Handling In JavaScript
-    - Let’s build projects [API fetching and manipulat DOM]
+    - Complete project [API fetching and manipulat DOM]
     
-Planed of tomorrow:
-    - Complete the [API fetching and manipulat DOM] project
-    - start jQuery
+    - Start jQuery
+    - jQuery Selectors
+    - jQuery Events & Effects
+
+    Project [API fetching and manipulat DOM - Completed]:
+    - https://deepmakhasana.github.io/sky9-internship/4_JS/pages/products.html
+
+Planed of Today after college:
+    - Callback Functions
+    - DOM manipulation in jQuery
+    - What is jQuery UI?
+    
+Planed of Friday[16/08/2024]:
+    - Complete given task
