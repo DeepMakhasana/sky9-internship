@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning jQuery</title>
+    <!-- jQuery ui style -->
+    <link rel="stylesheet" href="./jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="./jquery-ui/jquery-ui.structure.css" />
+    <link rel="stylesheet" href="./jquery-ui/jquery-ui.theme.css" />
+    <!-- Bootstrap style -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- custom style -->
+    <link rel="stylesheet" href="./css/custom-style.css" />
+  </head>
+  <body>
+    <!-- header - top bar -->
+    <header class="bg-primary">
+      <div class="container-fluid d-flex justify-content-between align-items-center py-2">
+        <h1 class="logo display-6 text-white">.taskfy</h1>
+        <div id="user" class="text-white">User</div>
+      </div>
+    </header>
+
+    <!-- main content with sidebar -->
+    <main class="container-fluid row">
+      <!-- slide bar -->
+      <nav class="col-1 col-sm-3 col-md-2 bg-secondary text-light" style="min-height: calc(100vh - 72px)">
+        <ul class="navbar-nav mt-4">
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="/index.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="/index.html">Team</a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="/index.html">User</a></li>
+        </ul>
+      </nav>
+      <!-- main content of section -->
+      <section class="col-11 col-sm-9 col-md-10 my-4">
+        <h2 class="h5">Dashboard</h2>
+
+        <div class="row mt-4 px-3">
+          <div class="col px-1">
+            <div class="card border-secondary" style="height: calc(100vh - 190px)">
+              <div class="card-header h6 text-secondary">To Do</div>
+              <div class="py-2 overflow-y-scroll draggable-container">
+                <div class="p-1">
+                  <div class="task-parent card ui-state-default">
+                    <div class="card-header">Deep Makhasana</div>
+                    <div class="p-2">
+                      <p class="mb-0">
+                        <small>
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
+                          voluptas.
+                        </small>
+                      </p>
+                      <p class="mb-0 text-secondary text-end" style="font-size: 0.9rem">
+                        <small>12 Aug 12:24 PM</small>
+                      </p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-end">
+                      <div class="btn-group">
+                        <button class="btn btn-sm btn-outline-primary">Edit</button>
+                        <button class="btn btn-sm btn-outline-primary">Delete</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-1">
+                  <div class="task-parent card ui-state-default">
+                    <div class="card-header">Deep Makhasana</div>
+                    <div class="p-2">
+                      <p style="text-align: justify">
+                        <small>
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
+                          voluptas consequatur quaerat eum animi.
+                        </small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-1">
+                  <div class="task-parent card ui-state-default">
+                    <div class="card-header">Deep Makhasana</div>
+                    <div class="p-2">
+                      <p style="text-align: justify">
+                        <small> Lorem ipsum, dolor sit amet consectetur adipisicing elit. </small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-1">
+            <div class="card border-primary" style="height: calc(100vh - 190px)">
+              <div class="card-header h6 text-primary">In Progress</div>
+              <div class="py-2 overflow-y-scroll draggable-container">
+                <div class="p-1">
+                  <div class="task-parent card ui-state-default">
+                    <div class="card-header">Deep Makhasana</div>
+                    <div class="p-2">
+                      <p style="text-align: justify">
+                        <small>
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
+                          voluptas consequatur quaerat eum animi, commodi voluptate quo.
+                        </small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-1">
+                  <div class="task-parent card ui-state-default">
+                    <div class="card-header">Deep Makhasana</div>
+                    <div class="p-2">
+                      <p style="text-align: justify">
+                        <small> Lorem ipsum, dolor sit amet consectetur adipisicing elit. </small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-1">
+                  <div class="task-parent card ui-state-default">
+                    <div class="card-header">Deep Makhasana</div>
+                    <div class="p-2">
+                      <p style="text-align: justify">
+                        <small>
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
+                          voluptas consequatur quaerat eum animi, commodi voluptate quo fugiat perferendis in.
+                        </small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-1">
+            <div class="card border-warning" style="height: calc(100vh - 190px)">
+              <div class="card-header h6 text-warning">On Hold</div>
+              <div class="py-2 overflow-y-scroll draggable-container">
+                <div class="p-1">
+                  <div class="task-parent card ui-state-default">
+                    <div class="card-header">Deep Makhasana</div>
+                    <div class="p-2">
+                      <p style="text-align: justify">
+                        <small>
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
+                          voluptas.
+                        </small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-1">
+                  <div class="task-parent card ui-state-default">
+                    <div class="card-header">Deep Makhasana</div>
+                    <div class="p-2">
+                      <p style="text-align: justify">
+                        <small>
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi.
+                        </small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-1">
+                  <div class="task-parent card ui-state-default">
+                    <div class="card-header">Deep Makhasana</div>
+                    <div class="p-2">
+                      <p style="text-align: justify">
+                        <small>
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
+                          voluptas consequatur quaerat eum animi, commodi.
+                        </small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-1">
+            <div class="card" style="height: calc(100vh - 190px); border: 1px solid purple">
+              <div class="card-header h6" style="color: purple">Review</div>
+              <div class="py-2 overflow-y-scroll draggable-container">
+                <div class="p-1">
+                  <div class="task-parent card ui-state-default">
+                    <div class="card-header">Deep Makhasana</div>
+                    <div class="p-2">
+                      <p style="text-align: justify">
+                        <small>
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
+                          voluptas consequatur.
+                        </small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-1">
+                  <div class="task-parent card ui-state-default">
+                    <div class="card-header">Deep Makhasana</div>
+                    <div class="p-2">
+                      <p style="text-align: justify">
+                        <small>
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
+                          voluptas consequatur quaerat eum animi.
+                        </small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-1">
+                  <div class="task-parent card ui-state-default">
+                    <div class="card-header">Deep Makhasana</div>
+                    <div class="p-2">
+                      <p style="text-align: justify">
+                        <small> Lorem ipsum, dolor sit amet consectetur adipisicing elit. </small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col px-1">
+            <div class="card border-success" style="height: calc(100vh - 190px)">
+              <div class="card-header h6 text-success">Completed</div>
+              <div class="py-2 overflow-y-scroll draggable-container">
+                <div class="p-1">
+                  <div class="task-parent card ui-state-default">
+                    <div class="card-header">Deep Makhasana</div>
+                    <div class="p-2">
+                      <p style="text-align: justify">
+                        <small>
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
+                          voluptas consequatur quaerat eum animi.
+                        </small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-1">
+                  <div class="task-parent card ui-state-default">
+                    <div class="card-header">Deep Makhasana</div>
+                    <div class="p-2">
+                      <p style="text-align: justify">
+                        <small>
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
+                          voluptas consequatur quaerat eum animi, commodi voluptate quo fugiat perferendis.
+                        </small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-1">
+                  <div class="task-parent card ui-state-default">
+                    <div class="card-header">Deep Makhasana</div>
+                    <div class="p-2">
+                      <p style="text-align: justify">
+                        <small>
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
+                          voluptas consequatur quaerat eum animi, commodi.
+                        </small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- jQuery script -->
+    <script src="./jQuery/jquery-3.7.1.js"></script>
+    <script src="./jquery-ui/jquery-ui.js"></script>
+    <!-- custom js -->
+    <script src="./js/index.js"></script>
+  </body>
+</html>
