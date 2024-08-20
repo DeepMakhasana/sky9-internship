@@ -27,31 +27,75 @@
       <!-- slide bar -->
       <nav class="col-1 col-sm-3 col-md-2 bg-secondary text-light" style="min-height: calc(100vh - 72px)">
         <ul class="navbar-nav mt-4">
-          <li class="nav-item"><a class="nav-link" aria-current="page" href="/index.html">Dashboard</a></li>
-          <li class="nav-item"><a class="nav-link" aria-current="page" href="/index.html">Team</a></li>
-          <li class="nav-item"><a class="nav-link" aria-current="page" href="/index.html">User</a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="./index.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="./team.html">Team</a></li>
         </ul>
       </nav>
       <!-- main content of section -->
       <section class="col-11 col-sm-9 col-md-10 my-4">
-        <h2 class="h5">Dashboard</h2>
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 class="h5">Dashboard</h2>
+          <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            + Add To Do
+          </button>
+        </div>
 
-        <div class="row mt-4 px-3">
+        <!-- create task model -->
+        <div
+          class="modal fade"
+          id="staticBackdrop"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="staticBackdropLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Create new todo</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <form>
+                <div class="modal-body">
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Task message</label>
+                    <input type="text" class="form-control" id="taskMessage" />
+                  </div>
+                  <div class="mb-3">
+                    <select class="form-select" id="selectedTeamMember" aria-label="Default select example">
+                      <option selected>Assign to team member</option>
+                      <option value="Member One">Member One</option>
+                      <option value="Member Two">Member Two</option>
+                      <option value="Member Three">Member Three</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="createTodo">Create</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4 px-3 g-2">
           <div class="col px-1">
             <div class="card border-secondary" style="height: calc(100vh - 190px)">
               <div class="card-header h6 text-secondary">To Do</div>
-              <div class="py-2 overflow-y-scroll draggable-container">
-                <div class="p-1">
+              <ul id="todoList" class="list-unstyled py-2 overflow-y-scroll draggable-container">
+                <!-- <li class="p-1">
                   <div class="task-parent card ui-state-default">
                     <div class="card-header">Deep Makhasana</div>
                     <div class="p-2">
-                      <p class="mb-0">
+                      <p class="mb-0 task-message">
                         <small>
                           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
                           voluptas.
                         </small>
                       </p>
-                      <p class="mb-0 text-secondary text-end" style="font-size: 0.9rem">
+                      <p class="task-date mb-0 text-secondary text-end" style="font-size: 0.9rem">
                         <small>12 Aug 12:24 PM</small>
                       </p>
                     </div>
@@ -62,231 +106,143 @@
                       </div>
                     </div>
                   </div>
-                </div>
-
-                <div class="p-1">
-                  <div class="task-parent card ui-state-default">
-                    <div class="card-header">Deep Makhasana</div>
-                    <div class="p-2">
-                      <p style="text-align: justify">
-                        <small>
-                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
-                          voluptas consequatur quaerat eum animi.
-                        </small>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="p-1">
-                  <div class="task-parent card ui-state-default">
-                    <div class="card-header">Deep Makhasana</div>
-                    <div class="p-2">
-                      <p style="text-align: justify">
-                        <small> Lorem ipsum, dolor sit amet consectetur adipisicing elit. </small>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                </li> -->
+              </ul>
             </div>
           </div>
 
           <div class="col px-1">
             <div class="card border-primary" style="height: calc(100vh - 190px)">
               <div class="card-header h6 text-primary">In Progress</div>
-              <div class="py-2 overflow-y-scroll draggable-container">
-                <div class="p-1">
+              <ul id="inProgressList" class="list-unstyled py-2 overflow-y-scroll draggable-container">
+                <!-- <li class="p-1">
                   <div class="task-parent card ui-state-default">
                     <div class="card-header">Deep Makhasana</div>
                     <div class="p-2">
-                      <p style="text-align: justify">
+                      <p class="mb-0 task-message">
                         <small>
                           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
-                          voluptas consequatur quaerat eum animi, commodi voluptate quo.
+                          voluptas.
                         </small>
                       </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="p-1">
-                  <div class="task-parent card ui-state-default">
-                    <div class="card-header">Deep Makhasana</div>
-                    <div class="p-2">
-                      <p style="text-align: justify">
-                        <small> Lorem ipsum, dolor sit amet consectetur adipisicing elit. </small>
+                      <p class="task-date mb-0 text-secondary text-end" style="font-size: 0.9rem">
+                        <small>12 Aug 12:24 PM</small>
                       </p>
                     </div>
-                  </div>
-                </div>
-
-                <div class="p-1">
-                  <div class="task-parent card ui-state-default">
-                    <div class="card-header">Deep Makhasana</div>
-                    <div class="p-2">
-                      <p style="text-align: justify">
-                        <small>
-                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
-                          voluptas consequatur quaerat eum animi, commodi voluptate quo fugiat perferendis in.
-                        </small>
-                      </p>
+                    <div class="card-footer d-flex justify-content-end">
+                      <div class="btn-group">
+                        <button class="btn btn-sm btn-outline-primary">Edit</button>
+                        <button class="btn btn-sm btn-outline-primary">Delete</button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                </li> -->
+              </ul>
             </div>
           </div>
 
           <div class="col px-1">
             <div class="card border-warning" style="height: calc(100vh - 190px)">
               <div class="card-header h6 text-warning">On Hold</div>
-              <div class="py-2 overflow-y-scroll draggable-container">
-                <div class="p-1">
+              <ul id="onHoldList" class="list-unstyled py-2 overflow-y-scroll draggable-container">
+                <!-- <li class="p-1">
                   <div class="task-parent card ui-state-default">
                     <div class="card-header">Deep Makhasana</div>
                     <div class="p-2">
-                      <p style="text-align: justify">
+                      <p class="mb-0 task-message">
                         <small>
                           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
                           voluptas.
                         </small>
                       </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="p-1">
-                  <div class="task-parent card ui-state-default">
-                    <div class="card-header">Deep Makhasana</div>
-                    <div class="p-2">
-                      <p style="text-align: justify">
-                        <small>
-                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi.
-                        </small>
+                      <p class="task-date mb-0 text-secondary text-end" style="font-size: 0.9rem">
+                        <small>12 Aug 12:24 PM</small>
                       </p>
                     </div>
-                  </div>
-                </div>
-
-                <div class="p-1">
-                  <div class="task-parent card ui-state-default">
-                    <div class="card-header">Deep Makhasana</div>
-                    <div class="p-2">
-                      <p style="text-align: justify">
-                        <small>
-                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
-                          voluptas consequatur quaerat eum animi, commodi.
-                        </small>
-                      </p>
+                    <div class="card-footer d-flex justify-content-end">
+                      <div class="btn-group">
+                        <button class="btn btn-sm btn-outline-primary">Edit</button>
+                        <button class="btn btn-sm btn-outline-primary">Delete</button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                </li> -->
+              </ul>
             </div>
           </div>
 
           <div class="col px-1">
             <div class="card" style="height: calc(100vh - 190px); border: 1px solid purple">
               <div class="card-header h6" style="color: purple">Review</div>
-              <div class="py-2 overflow-y-scroll draggable-container">
-                <div class="p-1">
+              <ul id="reviewList" class="list-unstyled py-2 overflow-y-scroll draggable-container">
+                <!-- <li class="p-1">
                   <div class="task-parent card ui-state-default">
                     <div class="card-header">Deep Makhasana</div>
                     <div class="p-2">
-                      <p style="text-align: justify">
+                      <p class="mb-0 task-message">
                         <small>
                           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
-                          voluptas consequatur.
+                          voluptas.
                         </small>
                       </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="p-1">
-                  <div class="task-parent card ui-state-default">
-                    <div class="card-header">Deep Makhasana</div>
-                    <div class="p-2">
-                      <p style="text-align: justify">
-                        <small>
-                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
-                          voluptas consequatur quaerat eum animi.
-                        </small>
+                      <p class="task-date mb-0 text-secondary text-end" style="font-size: 0.9rem">
+                        <small>12 Aug 12:24 PM</small>
                       </p>
                     </div>
-                  </div>
-                </div>
-
-                <div class="p-1">
-                  <div class="task-parent card ui-state-default">
-                    <div class="card-header">Deep Makhasana</div>
-                    <div class="p-2">
-                      <p style="text-align: justify">
-                        <small> Lorem ipsum, dolor sit amet consectetur adipisicing elit. </small>
-                      </p>
+                    <div class="card-footer d-flex justify-content-end">
+                      <div class="btn-group">
+                        <button class="btn btn-sm btn-outline-primary">Edit</button>
+                        <button class="btn btn-sm btn-outline-primary">Delete</button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                </li> -->
+              </ul>
             </div>
           </div>
 
           <div class="col px-1">
             <div class="card border-success" style="height: calc(100vh - 190px)">
               <div class="card-header h6 text-success">Completed</div>
-              <div class="py-2 overflow-y-scroll draggable-container">
-                <div class="p-1">
+              <ul id="completedList" class="list-unstyled py-2 overflow-y-scroll draggable-container">
+                <!-- <li class="p-1">
                   <div class="task-parent card ui-state-default">
                     <div class="card-header">Deep Makhasana</div>
                     <div class="p-2">
-                      <p style="text-align: justify">
+                      <p class="mb-0 task-message">
                         <small>
                           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
-                          voluptas consequatur quaerat eum animi.
+                          voluptas.
                         </small>
                       </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="p-1">
-                  <div class="task-parent card ui-state-default">
-                    <div class="card-header">Deep Makhasana</div>
-                    <div class="p-2">
-                      <p style="text-align: justify">
-                        <small>
-                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
-                          voluptas consequatur quaerat eum animi, commodi voluptate quo fugiat perferendis.
-                        </small>
+                      <p class="task-date mb-0 text-secondary text-end" style="font-size: 0.9rem">
+                        <small>12 Aug 12:24 PM</small>
                       </p>
                     </div>
-                  </div>
-                </div>
-
-                <div class="p-1">
-                  <div class="task-parent card ui-state-default">
-                    <div class="card-header">Deep Makhasana</div>
-                    <div class="p-2">
-                      <p style="text-align: justify">
-                        <small>
-                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem totam, facere eligendi
-                          voluptas consequatur quaerat eum animi, commodi.
-                        </small>
-                      </p>
+                    <div class="card-footer d-flex justify-content-end">
+                      <div class="btn-group">
+                        <button class="btn btn-sm btn-outline-primary">Edit</button>
+                        <button class="btn btn-sm btn-outline-primary">Delete</button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                </li> -->
+              </ul>
             </div>
           </div>
         </div>
       </section>
     </main>
+    <!-- bootstrap script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
     <!-- jQuery script -->
     <script src="./jQuery/jquery-3.7.1.js"></script>
     <script src="./jquery-ui/jquery-ui.js"></script>
     <!-- custom js -->
-    <script src="./js/index.js"></script>
+    <script src="./js/index.js" type="module"></script>
   </body>
 </html>

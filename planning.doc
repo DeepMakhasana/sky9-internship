@@ -1,17 +1,5 @@
 
 16/08/2024 Today Completed Work:
-
-    - jQuery Selectors
-    - jQuery Events & Effects
-    - Callback Functions
-    - DOM manipulation in jQuery
-    - What is jQuery UI?
-    - Widgets in jQuery
-    - Interactions in jQuery
-    - Theme Customization using jQuery
-    - Complete jQuery
-    
-Planed for [20/08/2024]:
     - Let and Const
     - Arrow Functions
     - Classes
@@ -23,3 +11,19 @@ Planed for [20/08/2024]:
     - Promises
     - Enhanced Object Literals
     - Symbols
+    - async await
+
+    Build taskfy with jQuery and Bootstrap
+    Implemented features: 
+    - create task
+    - change status of task using drag and drop
+    - create team member
+    https://deepmakhasana.github.io/sky9-internship/5_JQUERY
+
+Planed for tomorrow:
+    - complete ECMA Script
+    - Start TypeScript
+
+    Build taskfy with jQuery and Bootstrap
+    remaining features: 
+    - edit and delete task, team member
