@@ -4,7 +4,7 @@ $(document).ready(function () {
   // load team member
   function ListTeamMember() {
     const members = getLocalStorage("teamMember");
-    if (members) {
+    if (members && members.length != 0) {
       members.forEach((member, i) => {
         $("#memberList tbody").append(`<tr id=${member.id}>
                 <td scope="row">${i + 1}</td>
@@ -26,7 +26,13 @@ $(document).ready(function () {
   }
   ListTeamMember();
 
-  // team members
+  // when modal open using add team member btn hide edit btn
+  $("#openModel").on("click", () => {
+    $("#addMember").css({ display: "block" });
+    $("#editMember").css({ display: "none" });
+  });
+
+  // add team members
   $("#addMember").on("click", () => {
     addTeamMember();
   });
@@ -42,11 +48,12 @@ $(document).ready(function () {
 
     console.log("members: ", members);
 
-    if (members) {
+    if (members && members.length != 0) {
       const payload = [...members, newTeamMember];
       setLocalStorage("teamMember", payload);
     } else {
       setLocalStorage("teamMember", [newTeamMember]);
+      $("#memberList tbody tr").remove();
     }
 
     $("#memberList tbody").append(`<tr id=${newTeamMember.id}>
@@ -70,7 +77,7 @@ $(document).ready(function () {
   }
 });
 
-// delete team member
+// delete and edit team member event
 $("#memberList tbody").on("click", (e) => {
   console.log(e.target);
   if (e.target.id === "delete-member") {
@@ -80,6 +87,7 @@ $("#memberList tbody").on("click", (e) => {
   }
 });
 
+// delete member
 function deleteTeamMember(e) {
   const deleteId = e.target.getAttribute("data-temp");
   const members = getLocalStorage("teamMember");
@@ -87,8 +95,47 @@ function deleteTeamMember(e) {
 
   const payload = members.filter((member) => member.id != deleteId);
 
-  $(deleteId).remove();
+  $(e.target).parents("tr").remove();
+  if (payload.length === 0) {
+    $("#memberList tbody").append(`<tr>
+                <td colspan="4" class="text-center text-black-50">No any member in team</td>
+              </tr>`);
+  }
   setLocalStorage("teamMember", payload);
 }
 
-function editTeamMember(e) {}
+// edit member detail
+function editTeamMember(e) {
+  const editId = e.target.getAttribute("data-temp");
+  const members = getLocalStorage("teamMember");
+
+  const editMember = members.find((member) => member.id == editId);
+
+  $("#memberName").val(editMember.name);
+  $("#memberEmail").val(editMember.email);
+
+  $("#newMember").modal("show");
+  $("#editMember").css({ display: "block" });
+  $("#addMember").css({ display: "none" });
+
+  $("#editMember").on("click", () => {
+    const updatedMember = members.map((member) => {
+      if (member.id == editId) {
+        return {
+          ...member,
+          name: $("#memberName").val(),
+          email: $("#memberEmail").val(),
+        };
+      }
+      return member;
+    });
+
+    $(e.target).parents("tr").children("td:nth-child(2)").text($("#memberName").val());
+    $(e.target).parents("tr").children("td:nth-child(3)").text($("#memberEmail").val());
+
+    setLocalStorage("teamMember", updatedMember);
+    $("#memberName").val("");
+    $("#memberEmail").val("");
+    $("#newMember").modal("hide");
+  });
+}

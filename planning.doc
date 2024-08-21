@@ -1,29 +1,25 @@
 
-16/08/2024 Today Completed Work:
-    - Let and Const
-    - Arrow Functions
-    - Classes
-    - Template Literals
-    - Destructuring
-    - Default Parameters
-    - Spread and Rest Operators
-    - Modules
-    - Promises
-    - Enhanced Object Literals
-    - Symbols
-    - async await
+21/08/2024 Today Completed Work:
+    - Completed ECMA Script
+    - Start TypeScript
+    - Typescript setup local system
+    - Start with type number string and boolean
+    - null undefined and any type
+    - Array in typescript
+    - Object type typescript
 
-    Build taskfy with jQuery and Bootstrap
+    Build taskfy with jQuery and Bootstrap [Completed]
     Implemented features: 
-    - create task
-    - change status of task using drag and drop
-    - create team member
+    - edit and delete task, team member
     https://deepmakhasana.github.io/sky9-internship/5_JQUERY
 
 Planed for tomorrow:
-    - complete ECMA Script
-    - Start TypeScript
-
-    Build taskfy with jQuery and Bootstrap
-    remaining features: 
-    - edit and delete task, team member
+    - Functions and Its Types
+    - Union Type in detail
+    - Void,Never,Unknown type in detail
+    - Tuple in Typescript
+    - Enums in Typescript
+    - Type alisaing in Typescript
+    - String Literal Types
+    - Function Types
+    - Optional parameters, Defaul parameters and Rest parameters

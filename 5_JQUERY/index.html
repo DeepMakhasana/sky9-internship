@@ -35,7 +35,7 @@
       <section class="col-11 col-sm-9 col-md-10 my-4">
         <div class="d-flex justify-content-between align-items-center">
           <h2 class="h5">Dashboard</h2>
-          <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addTodoModal" id="addNewTodo">
             + Add To Do
           </button>
         </div>
@@ -43,17 +43,17 @@
         <!-- create task model -->
         <div
           class="modal fade"
-          id="staticBackdrop"
+          id="addTodoModal"
           data-bs-backdrop="static"
           data-bs-keyboard="false"
           tabindex="-1"
-          aria-labelledby="staticBackdropLabel"
+          aria-labelledby="addTodoModalLabel"
           aria-hidden="true"
         >
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Create new todo</h1>
+                <h1 class="modal-title fs-5" id="addTodoModalLabel">Create new todo</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <form>
@@ -64,7 +64,7 @@
                   </div>
                   <div class="mb-3">
                     <select class="form-select" id="selectedTeamMember" aria-label="Default select example">
-                      <option selected>Assign to team member</option>
+                      <option value="">Assign to team member</option>
                       <option value="Member One">Member One</option>
                       <option value="Member Two">Member Two</option>
                       <option value="Member Three">Member Three</option>
@@ -74,6 +74,7 @@
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   <button type="button" class="btn btn-primary" id="createTodo">Create</button>
+                  <button type="button" class="btn btn-primary" id="editTodo">Edit</button>
                 </div>
               </form>
             </div>
@@ -84,7 +85,7 @@
           <div class="col px-1">
             <div class="card border-secondary" style="height: calc(100vh - 190px)">
               <div class="card-header h6 text-secondary">To Do</div>
-              <ul id="todoList" class="list-unstyled py-2 overflow-y-scroll draggable-container">
+              <ul id="todo" class="list-unstyled py-2 overflow-y-scroll draggable-container">
                 <!-- <li class="p-1">
                   <div class="task-parent card ui-state-default">
                     <div class="card-header">Deep Makhasana</div>
@@ -114,7 +115,7 @@
           <div class="col px-1">
             <div class="card border-primary" style="height: calc(100vh - 190px)">
               <div class="card-header h6 text-primary">In Progress</div>
-              <ul id="inProgressList" class="list-unstyled py-2 overflow-y-scroll draggable-container">
+              <ul id="inProgress" class="list-unstyled py-2 overflow-y-scroll draggable-container">
                 <!-- <li class="p-1">
                   <div class="task-parent card ui-state-default">
                     <div class="card-header">Deep Makhasana</div>
@@ -144,7 +145,7 @@
           <div class="col px-1">
             <div class="card border-warning" style="height: calc(100vh - 190px)">
               <div class="card-header h6 text-warning">On Hold</div>
-              <ul id="onHoldList" class="list-unstyled py-2 overflow-y-scroll draggable-container">
+              <ul id="onHold" class="list-unstyled py-2 overflow-y-scroll draggable-container">
                 <!-- <li class="p-1">
                   <div class="task-parent card ui-state-default">
                     <div class="card-header">Deep Makhasana</div>
@@ -174,7 +175,7 @@
           <div class="col px-1">
             <div class="card" style="height: calc(100vh - 190px); border: 1px solid purple">
               <div class="card-header h6" style="color: purple">Review</div>
-              <ul id="reviewList" class="list-unstyled py-2 overflow-y-scroll draggable-container">
+              <ul id="review" class="list-unstyled py-2 overflow-y-scroll draggable-container">
                 <!-- <li class="p-1">
                   <div class="task-parent card ui-state-default">
                     <div class="card-header">Deep Makhasana</div>
@@ -204,7 +205,7 @@
           <div class="col px-1">
             <div class="card border-success" style="height: calc(100vh - 190px)">
               <div class="card-header h6 text-success">Completed</div>
-              <ul id="completedList" class="list-unstyled py-2 overflow-y-scroll draggable-container">
+              <ul id="complete" class="list-unstyled py-2 overflow-y-scroll draggable-container">
                 <!-- <li class="p-1">
                   <div class="task-parent card ui-state-default">
                     <div class="card-header">Deep Makhasana</div>
