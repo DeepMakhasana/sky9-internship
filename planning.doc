@@ -1,19 +1,5 @@
 
-21/08/2024 Today Completed Work:
-    - Completed ECMA Script
-    - Start TypeScript
-    - Typescript setup local system
-    - Start with type number string and boolean
-    - null undefined and any type
-    - Array in typescript
-    - Object type typescript
-
-    Build taskfy with jQuery and Bootstrap [Completed]
-    Implemented features: 
-    - edit and delete task, team member
-    https://deepmakhasana.github.io/sky9-internship/5_JQUERY
-
-Planed for tomorrow:
+22/08/2024 Today Completed Work:
     - Functions and Its Types
     - Union Type in detail
     - Void,Never,Unknown type in detail
@@ -23,3 +9,19 @@ Planed for tomorrow:
     - String Literal Types
     - Function Types
     - Optional parameters, Defaul parameters and Rest parameters
+    - Interface
+    - completed Typescript
+
+    Build product filter and cart with TypeScript, jQuery and Bootstrap [Completed]
+    Implemented features: 
+    - Fetch and load products
+    - filter by rating and product
+    https://deepmakhasana.github.io/sky9-internship/6_TS/
+
+Planed for tomorrow:
+    - start React.js
+
+    Build product filter and cart with TypeScript, jQuery and Bootstrap [Completed]
+    Remaining features: 
+    - Add to cart
+    https://deepmakhasana.github.io/sky9-internship/6_TS/
