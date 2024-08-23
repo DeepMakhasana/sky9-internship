@@ -30,6 +30,12 @@ $(document).ready(function () {
           </div>`);
         });
         updateAddToCartBtn();
+        // add to card btn action
+        $(".card button").on("click", function () {
+            addToCardProduct(Number($(this).attr("id")));
+        });
+        // load local storage data to DOM
+        loadLocalStorageCartData();
     }
     // query product from api and load on DOM
     const loadProduct = async () => {
@@ -38,12 +44,6 @@ $(document).ready(function () {
         if (products?.length) {
             $("#productContainer").text("");
             appendProducts(products);
-            // add to card btn action
-            $(".card button").on("click", function () {
-                addToCardProduct(Number($(this).attr("id")));
-            });
-            // load local storage data to DOM
-            loadLocalStorageCartData();
         }
     };
     // first time fetch and load products
