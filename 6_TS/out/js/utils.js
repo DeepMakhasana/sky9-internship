@@ -14,3 +14,16 @@ export function convertIntoSmallLength(text, maxLength) {
     }
     return `${text.substring(0, maxLength)}...`;
 }
+export function setLocalStorage(key, payload) {
+    const payloadJsonToString = JSON.stringify(payload);
+    localStorage.setItem(key, payloadJsonToString);
+}
+export function getLocalStorage(key) {
+    const localData = localStorage.getItem(key);
+    if (typeof localData == "string") {
+        return JSON.parse(localData);
+    }
+    else {
+        return [];
+    }
+}

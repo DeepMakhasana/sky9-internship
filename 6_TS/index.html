@@ -18,22 +18,74 @@
     </header>
     <main>
       <!-- filter and card section -->
-      <section class="container d-flex justify-content-between align-items-center my-4">
+      <section class="container d-flex justify-content-between align-items-center my-4 gap-4">
         <div class="filter">
-          <div class="btn-group" role="group" aria-label="Basic outlined example">
-            <button type="button" class="btn btn-outline-primary" id="sortByRating">Sort by rating</button>
-            <button type="button" class="btn btn-outline-primary" id="priceAscending">Price low to high</button>
-            <button type="button" class="btn btn-outline-primary" id="priceDescending">Price high to low</button>
+          <div role="group" aria-label="Basic outlined example">
+            <button type="button" class="btn btn-outline-primary my-1" id="sortByRating">Sort by rating</button>
+            <button type="button" class="btn btn-outline-primary my-1" id="priceAscending">Price low to high</button>
+            <button type="button" class="btn btn-outline-primary my-1" id="priceDescending">Price high to low</button>
           </div>
         </div>
         <div class="cart">
-          <button type="button" class="btn btn-primary position-relative">
+          <button
+            type="button"
+            class="btn btn-primary position-relative"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"
+          >
             Cart
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            <span
+              id="cartCount"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >
               0
-              <span class="visually-hidden">Number of add product</span>
             </span>
           </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasRightLabel">Cart items</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div id="cartProductContainer" class="offcanvas-body">
+              <p class="card-text text-center text-black-50">Not have products selected.</p>
+              <!-- <div class="card mb-3" style="max-width: 540px">
+                <div class="row g-0">
+                  <div class="col-4 p-2">
+                    <img
+                      src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+                      class="img-fluid rounded-start"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="col-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <div class="d-flex justify-content-between align-items-center my-2">
+                        <h6 class="my-0">Price: $100</h6>
+                        <p class="my-0">Rating: 4.1</p>
+                      </div>
+                      <div class="input-group mb-3 my-3">
+                        <span class="btn btn-outline-primary" id="basic-addon1">+</span>
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="10"
+                          style="max-width: 50px; text-align: center"
+                        />
+                        <span class="btn btn-outline-primary" id="basic-addon1">-</span>
+                      </div>
+                      <p class="card-text"><small class="text-body-secondary">One pice price is $120</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+            <div class="offcanvas-bottom d-flex justify-content-between align-items-center p-3 border-top">
+              <h5 class="fs-6" id="cartTotalAmount">Total amount: $650</h5>
+              <button type="button" class="btn btn-primary">Confirm Order</button>
+            </div>
+          </div>
         </div>
       </section>
 
