@@ -1,27 +1,27 @@
 
-22/08/2024 Today Completed Work:
-    - Functions and Its Types
-    - Union Type in detail
-    - Void,Never,Unknown type in detail
-    - Tuple in Typescript
-    - Enums in Typescript
-    - Type alisaing in Typescript
-    - String Literal Types
-    - Function Types
-    - Optional parameters, Defaul parameters and Rest parameters
-    - Interface
-    - completed Typescript
-
-    Build product filter and cart with TypeScript, jQuery and Bootstrap [Completed]
-    Implemented features: 
-    - Fetch and load products
-    - filter by rating and product
-    https://deepmakhasana.github.io/sky9-internship/6_TS/
+28/08/2024 Today Completed Work:
+    - introduction to react js life cycle
+    - constructor, render, component did mount, component did update, Should Component update, componentWillUnmount
+    - Hooks in react js
+    - useEffect hook in react js
+    - useEffect  with state and props in react js
+    - install bootstrap in  react js
+    - Handle array with list in react js
+    - List with bootstrap in react js
+    - Nested list with a nested array in react tutorial
+    - How to reuse component in reactJs
+    - Nested list with a nested array in react tutorial
+    - React js send data child to parent
 
 Planed for tomorrow:
-    - start React.js
-
-    Build product filter and cart with TypeScript, jQuery and Bootstrap [Completed]
-    Remaining features: 
-    - Add to cart
-    https://deepmakhasana.github.io/sky9-internship/6_TS/
+    - useContext, useMemo, useCallback
+    - Pure Component in React js
+    - useRef in react functional component, 
+    - forward ref, Controlled Component, Uncontrolled Component, High order component, Routing basic, Routing example
+    - 404 page in react routing
+    - React js Dynamic routing 
+    - React js Call Get, post, delete, update Method API- HTTP call
+    - What is postman
+    - React js pre-filled form
+    - React js get the previous state in the functional component 
+    - get previous props in react js with hooks
