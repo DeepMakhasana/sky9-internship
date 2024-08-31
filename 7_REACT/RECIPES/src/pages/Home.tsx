@@ -1,6 +1,6 @@
 import HeroIllustration from "../assets/Hero-illustrator.svg";
 
-const Home = () => {
+export const Home = () => {
   return (
     <div className="container">
       <div className="row d-flex align-items-center justify-content-center" style={{ height: "calc(100vh - 88px)" }}>
@@ -18,5 +18,3 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;

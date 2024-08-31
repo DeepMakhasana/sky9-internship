@@ -1,29 +1,35 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home.tsx";
-import Login from "./pages/Login.tsx";
+import Layout from "./Layout.tsx";
+import { ErrorPage, Home, Login, Profile, Recipes } from "./pages/index.ts";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/recipes",
-    element: <Home />,
-  },
-  {
-    path: "/profile",
-    element: <Home />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
+    element: <Layout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "recipes",
+        element: <Recipes />,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+    ],
   },
 ]);
 
 function App() {
   return <RouterProvider router={router} />;
-  return <>app</>;
 }
 
 export default App;

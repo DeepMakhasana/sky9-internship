@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useReducer } from "react";
 import { AuthContext } from "./auth-context.tsx";
 import { ActionMapType, AuthStateType, AuthUserType } from "./type.ts";
-import { getLocalStorage, isValidToken, setLocalStorage } from "./utils.tsx";
+import { getLocalStorage, isValidToken, setLocalStorage } from "../../utils/utils.tsx";
 import { Axios } from "../../utils/axios.ts";
 import { endpoints } from "../../utils/config.ts";
 
@@ -9,12 +9,16 @@ enum Types {
   INITIAL = "INITIAL",
   LOGIN = "LOGIN",
   LOGOUT = "LOGOUT",
+  LOADING = "LOADING",
 }
 
 const STORAGE_KEY = "accessToken";
 
 type Payload = {
   [Types.INITIAL]: {
+    user: AuthUserType;
+  };
+  [Types.LOADING]: {
     user: AuthUserType;
   };
   [Types.LOGIN]: {
@@ -32,9 +36,15 @@ const reducer = (state: AuthStateType, action: ActionsType) => {
       user: action.payload.user,
     };
   }
+  if (action.type === Types.LOADING) {
+    return {
+      loading: true,
+      user: action.payload.user,
+    };
+  }
   if (action.type === Types.LOGIN) {
     return {
-      ...state,
+      loading: false,
       user: action.payload.user,
     };
   }
@@ -60,8 +70,6 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       const accessToken = getLocalStorage(STORAGE_KEY);
 
       if (accessToken && isValidToken(accessToken)) {
-        setLocalStorage(STORAGE_KEY, accessToken);
-
         const res = await Axios.get(endpoints.auth.me, {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -79,6 +87,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           },
         });
       } else {
+        setLocalStorage(STORAGE_KEY, "");
         dispatch({
           type: Types.INITIAL,
           payload: {
@@ -107,6 +116,13 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       username,
       password,
     };
+
+    dispatch({
+      type: Types.LOADING,
+      payload: {
+        user: null,
+      },
+    });
 
     const res = await Axios.post(endpoints.auth.login, data);
 

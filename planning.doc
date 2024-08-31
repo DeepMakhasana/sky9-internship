@@ -1,27 +1,10 @@
 
-28/08/2024 Today Completed Work:
-    - introduction to react js life cycle
-    - constructor, render, component did mount, component did update, Should Component update, componentWillUnmount
-    - Hooks in react js
-    - useEffect hook in react js
-    - useEffect  with state and props in react js
-    - install bootstrap in  react js
-    - Handle array with list in react js
-    - List with bootstrap in react js
-    - Nested list with a nested array in react tutorial
-    - How to reuse component in reactJs
-    - Nested list with a nested array in react tutorial
-    - React js send data child to parent
-
-Planed for tomorrow:
-    - useContext, useMemo, useCallback
-    - Pure Component in React js
-    - useRef in react functional component, 
-    - forward ref, Controlled Component, Uncontrolled Component, High order component, Routing basic, Routing example
-    - 404 page in react routing
-    - React js Dynamic routing 
-    - React js Call Get, post, delete, update Method API- HTTP call
-    - What is postman
-    - React js pre-filled form
-    - React js get the previous state in the functional component 
-    - get previous props in react js with hooks
+30/08/2024 Today Completed Work:
+    React Advance topics
+        - Code splitting
+        - Lazy Loading
+        - Debouncing and Throttling
+        - Custom hooks
+        - State management using useContext
+        - react router
+        - Start building Recipes site - [Authentication, Authorization, data fetching and management]
