@@ -1,12 +1,12 @@
-import RecipeTags from "../components/recipes/RecipeTags.tsx";
+import RecipeSlideBar from "../components/recipes/RecipeSlideBar.tsx";
+import RecipesLoad from "../components/recipes/Recipes.tsx";
 
 export const Recipes = () => {
   return (
-    <section className="container-fluid">
-      <h1 className="display-6 mb-4">All Recipes</h1>
+    <section className="container-fluid" style={{ height: "calc(100vh - 88px)" }}>
       <div className="row">
-        <RecipeTags />
-        <div className="col-lg-9">main</div>
+        <RecipeSlideBar />
+        <RecipesLoad />
       </div>
     </section>
   );

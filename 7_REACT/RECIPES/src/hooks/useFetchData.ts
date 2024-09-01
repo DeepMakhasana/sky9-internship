@@ -1,14 +1,19 @@
 import { useCallback, useEffect, useState } from "react";
 import { Axios } from "../utils/axios.ts";
 
-const useFetchData = (url: string) => {
+type UseFetchDataType = (url: string) => {
+  data: any;
+  isLoading: boolean;
+  error: string | null;
+};
+
+const useFetchData: UseFetchDataType = (url: string) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const getData = useCallback(async () => {
     const { data, status } = await Axios.get(url);
-    console.log(data);
     setIsLoading(false);
     if (status === 200) {
       setData(data);

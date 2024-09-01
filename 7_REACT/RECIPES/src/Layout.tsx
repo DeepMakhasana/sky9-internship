@@ -7,10 +7,10 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "./contexts/auth/auth-context.tsx";
 import Loading from "./components/Loading.tsx";
+import { RecipesProvider } from "./contexts/recipes/recipes-provider.tsx";
 
 const Layout = () => {
   const auth = useContext(AuthContext);
-  console.log("layout auth: ", auth);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -23,7 +23,9 @@ const Layout = () => {
   return (
     <>
       <NavigationBar />
-      <main>{auth.loading ? <Loading /> : <Outlet />}</main>
+      <RecipesProvider>
+        <main>{auth.loading ? <Loading /> : <Outlet />}</main>
+      </RecipesProvider>
     </>
   );
 };
