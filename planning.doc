@@ -1,27 +1,10 @@
 
-22/08/2024 Today Completed Work:
-    - Functions and Its Types
-    - Union Type in detail
-    - Void,Never,Unknown type in detail
-    - Tuple in Typescript
-    - Enums in Typescript
-    - Type alisaing in Typescript
-    - String Literal Types
-    - Function Types
-    - Optional parameters, Defaul parameters and Rest parameters
-    - Interface
-    - completed Typescript
-
-    Build product filter and cart with TypeScript, jQuery and Bootstrap [Completed]
-    Implemented features: 
-    - Fetch and load products
-    - filter by rating and product
-    https://deepmakhasana.github.io/sky9-internship/6_TS/
-
-Planed for tomorrow:
-    - start React.js
-
-    Build product filter and cart with TypeScript, jQuery and Bootstrap [Completed]
-    Remaining features: 
-    - Add to cart
-    https://deepmakhasana.github.io/sky9-internship/6_TS/
+30/08/2024 Today Completed Work:
+    React Advance topics
+        - Code splitting
+        - Lazy Loading
+        - Debouncing and Throttling
+        - Custom hooks
+        - State management using useContext
+        - react router
+        - Start building Recipes site - [Authentication, Authorization, data fetching and management]
