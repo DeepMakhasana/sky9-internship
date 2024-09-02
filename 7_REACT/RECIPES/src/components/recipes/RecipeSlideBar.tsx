@@ -67,14 +67,20 @@ const RecipesMealType = ({ getByMealType }: { getByMealType: (tag: string) => vo
 };
 
 const SortRecipes = ({ sortRecipes }: { sortRecipes: (parameter: string) => void }) => {
+  const [selectedOption, setSelectedOption] = useState("");
   const handelParameterChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setSelectedOption(e.target.value);
     sortRecipes(e.target.value);
   };
   return (
     <div className="mb-4">
       <h5 className="h5 mb-3">Sorting option</h5>
-      <select className="form-select" onChange={handelParameterChange}>
-        <option selected>Sort by some parameter</option>
+      <select
+        className="form-select"
+        value={selectedOption}
+        onChange={handelParameterChange}
+      >
+        <option value="">Sort by option</option>
         <option value="caloriesPerServing">Sort by calories</option>
         <option value="difficulty">Sort by difficulty level</option>
         <option value="rating">Sort by rating</option>

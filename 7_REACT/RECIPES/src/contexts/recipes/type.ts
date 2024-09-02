@@ -25,12 +25,15 @@ export interface RecipesDataType {
 }
 
 export interface RecipesContextType {
-  initialize: (data: RecipeType[]) => void;
+  initialize: () => void;
   recipesData: RecipesDataType | null;
   getByTag: (tag: string) => void;
   getByMealType: (meal: string) => void;
   sortRecipes: (parameter: string) => void;
   setCustomPage: (page: number) => void;
+  searchByRecipeName: (query: string) => void;
+  // searchQuery: string;
+  // setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
   page: number;
   nextPage: () => void;
   previousPage: () => void;

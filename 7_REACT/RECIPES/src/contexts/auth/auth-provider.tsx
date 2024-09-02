@@ -1,7 +1,11 @@
 import React, { useCallback, useEffect, useMemo, useReducer } from "react";
 import { AuthContext } from "./auth-context.tsx";
 import { ActionMapType, AuthStateType, AuthUserType } from "./type.ts";
-import { getLocalStorage, isValidToken, setLocalStorage } from "../../utils/utils.tsx";
+import {
+  getLocalStorage,
+  isValidToken,
+  setLocalStorage,
+} from "../../utils/utils.ts";
 import { Axios } from "../../utils/axios.ts";
 import { endpoints } from "../../utils/config.ts";
 
@@ -13,6 +17,7 @@ enum Types {
 }
 
 const STORAGE_KEY = "accessToken";
+const USERDATA_STORAGE_KEY = "user";
 
 type Payload = {
   [Types.INITIAL]: {
@@ -88,6 +93,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         });
       } else {
         setLocalStorage(STORAGE_KEY, "");
+        setLocalStorage(USERDATA_STORAGE_KEY, {});
         dispatch({
           type: Types.INITIAL,
           payload: {
@@ -129,6 +135,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const userData = res?.data;
 
     setLocalStorage(STORAGE_KEY, userData.token);
+    setLocalStorage(USERDATA_STORAGE_KEY, userData);
 
     dispatch({
       type: Types.LOGIN,
@@ -143,6 +150,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   // LOGOUT
   const logout = useCallback(async () => {
     setLocalStorage(STORAGE_KEY, "");
+    setLocalStorage(USERDATA_STORAGE_KEY, "");
     dispatch({
       type: Types.LOGOUT,
     });
@@ -164,7 +172,11 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }),
     [login, logout, state.user, status, initialize]
   );
-  return <AuthContext.Provider value={memoizedValue}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={memoizedValue}>
+      {children}
+    </AuthContext.Provider>
+  );
 };
 
 export default AuthProvider;

@@ -9,13 +9,18 @@ const Recipes = () => {
   if (error) return <p className="col-lg-9">{`Error: ${error}`}</p>;
 
   return (
-    <section className="col-lg-9">
-      <h4>Recipes List</h4>
-      <div id="recipes" className="row g-2 justify-content-center justify-content-md-start my-3">
+    <>
+      <div
+        id="recipes"
+        className="row g-2 justify-content-center justify-content-md-start my-3"
+      >
         {recipesData?.recipes?.map((recipe) => (
           <div className="col-12 col-sm-6 col-md-4" key={recipe.id}>
             <div className="card">
-              <div style={{ minHeight: "200px" }} className="d-flex justify-content-center align-items-center">
+              <div
+                style={{ minHeight: "200px" }}
+                className="d-flex justify-content-center align-items-center"
+              >
                 <img
                   src={recipe.image}
                   style={{ objectFit: "cover" }}
@@ -30,7 +35,8 @@ const Recipes = () => {
                     <strong>Difficulty level:</strong> {recipe.difficulty}
                   </p>
                   <p className="my-0">
-                    <strong>Cooking time:</strong> {recipe.prepTimeMinutes + recipe.cookTimeMinutes}
+                    <strong>Cooking time:</strong>{" "}
+                    {recipe.prepTimeMinutes + recipe.cookTimeMinutes}
                   </p>
                   <p className="my-0">
                     <strong>Calories:</strong> {recipe.caloriesPerServing}
@@ -55,8 +61,8 @@ const Recipes = () => {
       </div>
 
       {/* pagination */}
-      {/* <RecipesPagination /> */}
-    </section>
+      <RecipesPagination />
+    </>
   );
 };
 

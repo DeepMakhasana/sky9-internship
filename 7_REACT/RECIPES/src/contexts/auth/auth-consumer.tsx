@@ -1,8 +1,7 @@
-import React from "react";
+import { useContext } from "react";
 import { AuthContext } from "./auth-context.tsx";
 
-const AuthConsumer = ({ children }: { children: React.ReactNode }) => {
-  return <AuthContext.Consumer>{() => children}</AuthContext.Consumer>;
+export const useAuth = () => {
+  const auth = useContext(AuthContext);
+  return auth;
 };
-
-export default AuthConsumer;

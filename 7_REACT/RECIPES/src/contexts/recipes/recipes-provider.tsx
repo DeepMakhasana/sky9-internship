@@ -1,9 +1,13 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { RecipesContext } from "./recipes-context.tsx";
 import { RecipesDataType } from "./type.ts";
 import { Axios } from "../../utils/axios.ts";
 
-export const RecipesProvider = ({ children }: { children: React.ReactNode }) => {
+export const RecipesProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   const [recipesData, setRecipesData] = useState<RecipesDataType | null>(null);
   const [page, setPage] = useState<number>(0);
   const [isLoading, setIsLoading] = useState(false);
@@ -19,10 +23,6 @@ export const RecipesProvider = ({ children }: { children: React.ReactNode }) => 
     setError(data.message);
     setIsLoading(false);
   }, []);
-
-  useEffect(() => {
-    initialize();
-  }, [initialize]);
 
   const getByTag = useCallback(async (tag: string) => {
     setIsLoading(true);
@@ -63,7 +63,9 @@ export const RecipesProvider = ({ children }: { children: React.ReactNode }) => 
 
   // pagination system
   const nextPage = useCallback(async () => {
-    const { data, status } = await Axios.get(`/recipes?limit=10&skip=${(page + 1) * 10}`);
+    const { data, status } = await Axios.get(
+      `/recipes?limit=10&skip=${(page + 1) * 10}`
+    );
     setPage((pre) => pre + 1);
     if (status === 200) {
       setRecipesData(data);
@@ -72,7 +74,9 @@ export const RecipesProvider = ({ children }: { children: React.ReactNode }) => 
   }, [page, setPage]);
 
   const previousPage = useCallback(async () => {
-    const { data, status } = await Axios.get(`/recipes?limit=10&skip=${(page - 1) * 10}`);
+    const { data, status } = await Axios.get(
+      `/recipes?limit=10&skip=${(page - 1) * 10}`
+    );
     setPage((pre) => pre - 1);
     if (status === 200) {
       setRecipesData(data);
@@ -81,12 +85,25 @@ export const RecipesProvider = ({ children }: { children: React.ReactNode }) => 
   }, [page, setPage]);
 
   const setCustomPage = useCallback(async (pageNumber: number) => {
-    const { data, status } = await Axios.get(`/recipes?limit=10&skip=${(pageNumber - 1) * 10}`);
+    const { data, status } = await Axios.get(
+      `/recipes?limit=10&skip=${(pageNumber - 1) * 10}`
+    );
     setPage(pageNumber - 1);
     if (status === 200) {
       setRecipesData(data);
     }
     setError(data.message);
+  }, []);
+
+  // search recipes
+  const searchByRecipeName = useCallback(async (query: string) => {
+    setIsLoading(true);
+    const { data, status } = await Axios.get(`/recipes/search?q=${query}`);
+    if (status === 200) {
+      setRecipesData(data);
+    }
+    setError(data.message);
+    setIsLoading(false);
   }, []);
 
   const memorizeRecipes = useMemo(
@@ -102,6 +119,7 @@ export const RecipesProvider = ({ children }: { children: React.ReactNode }) => 
       nextPage,
       previousPage,
       setCustomPage,
+      searchByRecipeName,
     }),
     [
       recipesData,
@@ -115,7 +133,12 @@ export const RecipesProvider = ({ children }: { children: React.ReactNode }) => 
       nextPage,
       previousPage,
       setCustomPage,
+      searchByRecipeName,
     ]
   );
-  return <RecipesContext.Provider value={memorizeRecipes}>{children}</RecipesContext.Provider>;
+  return (
+    <RecipesContext.Provider value={memorizeRecipes}>
+      {children}
+    </RecipesContext.Provider>
+  );
 };
