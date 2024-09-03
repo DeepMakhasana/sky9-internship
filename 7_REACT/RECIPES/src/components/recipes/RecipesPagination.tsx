@@ -10,6 +10,8 @@ const RecipesPagination = () => {
     return <></>;
   }
 
+  console.log("child - Recipes pagination");
+
   return (
     <div className="py-4">
       <nav aria-label="Page navigation example">

@@ -92,6 +92,8 @@ const SortRecipes = ({ sortRecipes }: { sortRecipes: (parameter: string) => void
 const RecipeSlideBar = () => {
   const { getByTag, getByMealType, sortRecipes } = useRecipes();
 
+  console.log("child - Recipes slide bar");
+
   return (
     <div className="col-lg-3">
       <RecipesMealType getByMealType={getByMealType} />

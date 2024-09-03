@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useRecipes } from "../../contexts/recipes/recipes-consumer.tsx";
-import RecipesPagination from "./RecipesPagination.tsx";
+import { lazy, Suspense } from "react";
+// import RecipesPagination from "./RecipesPagination.tsx";
+const RecipesPagination = lazy(() => import("./RecipesPagination.tsx"));
 
 const RecipesLoad = () => {
   const { recipesData, isLoading, error } = useRecipes();
@@ -8,6 +10,8 @@ const RecipesLoad = () => {
   if (isLoading) return <p className="col-lg-9">Loading...</p>;
 
   if (error) return <p className="col-lg-9">{`Error: ${error}`}</p>;
+
+  console.log("child - Recipes load");
 
   return (
     <>
@@ -64,7 +68,9 @@ const RecipesLoad = () => {
       </div>
 
       {/* pagination */}
-      <RecipesPagination />
+      <Suspense fallback={<p>lazy loding...</p>}>
+        <RecipesPagination />
+      </Suspense>
     </>
   );
 };

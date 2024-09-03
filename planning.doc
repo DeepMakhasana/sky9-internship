@@ -1,10 +1,10 @@
 
-30/08/2024 Today Completed Work:
-    React Advance topics
-        - Code splitting
-        - Lazy Loading
-        - Debouncing and Throttling
-        - Custom hooks
-        - State management using useContext
-        - react router
-        - Start building Recipes site - [Authentication, Authorization, data fetching and management]
+
+03/09/2024 Today Completed Work:
+
+    - clear concept of typescript - class and Generics
+    - clear concept of react hooks and component rendering behavior
+    - optimization of recipes project
+        Recipes: https://tiny-piroshki-14ce14.netlify.app/
+        Repo: https://github.com/DeepMakhasana/sky9-internship/tree/main/7_REACT/RECIPES
+        

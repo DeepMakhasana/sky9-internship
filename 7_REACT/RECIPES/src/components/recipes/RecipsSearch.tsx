@@ -19,7 +19,10 @@ const RecipsSearch = () => {
     }else {
       initialize();
     }
+    
   }, [debounceSearchQuery]);
+
+  console.log("child - Recipes search");
 
   return (
     <div className="input-group flex-nowrap" style={{ maxWidth: "300px" }}>
