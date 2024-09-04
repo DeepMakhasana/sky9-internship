@@ -1,10 +1,8 @@
 
 
-03/09/2024 Today Completed Work:
+04/09/2024 Today Completed Work:
 
-    - clear concept of typescript - class and Generics
-    - clear concept of react hooks and component rendering behavior
-    - optimization of recipes project
-        Recipes: https://tiny-piroshki-14ce14.netlify.app/
-        Repo: https://github.com/DeepMakhasana/sky9-internship/tree/main/7_REACT/RECIPES
+    - Basic Redux and Thunk Redux
+    - started Saga Redux
+    - Repo: https://github.com/DeepMakhasana/sky9-internship/tree/main/7_REACT/RECIPES
         
