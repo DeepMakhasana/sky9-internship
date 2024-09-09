@@ -1,0 +1,24 @@
+// get the type of theme
+$theme-type: [data-theme];
+
+// main color
+$primary-color: #9c9;
+$secondry-color: #99c;
+
+// backgroung color
+$bg-primary-color: #333333;
+$bg-secondry-color: #444444;
+
+// text color
+$text-primary-color: #999;
+$text-secondry-color: #ffffff;
+
+@if $theme-type == light {
+    // backgroung color
+    $bg-primary-color: #f3f3f3;
+    $bg-secondry-color: #d4d4d4;
+
+    // text color
+    $text-primary-color: #333333;
+    $text-secondry-color: #000000;
+}
