@@ -1,11 +1,36 @@
 import { QuoteType } from "@/types/quotes";
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState: QuoteType[] = [];
+
+// add one quote using random api - use of createAsycThunk
+// Simulate an API call
+export const fetchoneRandomQuote = createAsyncThunk(
+  "quote/fetchRandomQuote",
+  async () => {
+    const response = await fetch("https://dummyjson.com/quotes/random");
+    if (!response.ok) {
+      throw new Error("error in favourite quote fetching!");
+    }
+    return await response.json();
+  }
+);
 
 const favouriteQuote = createSlice({
   name: "favourite",
   initialState,
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchoneRandomQuote.pending, (state) => {
+        console.log("Pending state: ", state);
+      })
+      .addCase(fetchoneRandomQuote.fulfilled, (state, action) => {
+        state.push(action.payload);
+      })
+      .addCase(fetchoneRandomQuote.rejected, (state) => {
+        console.log("Error state: ", state);
+      });
+  },
   reducers: {
     add: (state, action) => {
       state.push(action.payload);

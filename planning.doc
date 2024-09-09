@@ -1,6 +1,32 @@
 
 
-06/09/2024 Today Completed Work:
+09/09/2024 Today Completed Work:
 
-    - redux-saga completed with simple redux
+    - tailwindcss and redux-toolkit
+    - Quotes: https://comfy-florentine-9c2c95.netlify.app/ 
     - Repo: https://github.com/DeepMakhasana/sky9-internship/tree/main/7_REACT/quotes
+
+
+
+-----------------------------------------------------------------------------------------------
+
+HTML
+    https://deepmakhasana.github.io/sky9-internship/1_HTML/
+CSS
+    Sky9 site redesign - https://deepmakhasana.github.io/sky9-internship/2_CSS/
+BOOTSTRAP
+    HV Interior - https://deepmakhasana.github.io/sky9-internship/3_BOOTSTRAP/
+JAVASCRIPT
+    Normal TODO App - https://deepmakhasana.github.io/sky9-internship/4_JS/pages/todo.html
+    Produt fetching - https://deepmakhasana.github.io/sky9-internship/4_JS/pages/products.html
+jQuery
+    Advance task manager - https://deepmakhasana.github.io/sky9-internship/5_JQUERY/
+TYPESCRIPT
+    Product filter and add to cart - https://deepmakhasana.github.io/sky9-internship/6_TS/
+React js
+    1. Recipes - https://tiny-piroshki-14ce14.netlify.app/
+        - Authentication and authoriztion
+        - recipes list, filter, sort, search
+    2. Life Quote - https://comfy-florentine-9c2c95.netlify.app/
+        - read life quotes
+        - add favourites quotes in favourite list using redux toolkit

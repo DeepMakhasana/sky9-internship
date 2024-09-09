@@ -5,10 +5,17 @@ import { Button } from "@/components/ui/button";
 import { QuoteType } from "@/types/quotes";
 import { ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import { fetchoneRandomQuote } from "@/store/slice/favouriteQuote";
+import { useAppDispatch } from "@/store";
 
 const Home = () => {
   const [randomQuote, setRandomQuote] = useState<QuoteType | null>(null);
   const [readCount, setReadCount] = useState<number>(1);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchoneRandomQuote());
+  }, []);
 
   useEffect(() => {
     getRandomQuote()
@@ -19,6 +26,7 @@ const Home = () => {
         console.log("error", error);
       });
   }, [readCount]);
+
   return (
     <div
       className="flex justify-center items-end flex-col gap-4"
