@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Kumbh Sans';
+  src: url('./fonts/KumbhSans-Regular.ttf') format('truetype');  // Specify the path to your .ttf file
+  font-weight: normal;  // You can specify the weight if the font comes in different weights
+  font-style: normal;   // Specify the style, e.g., normal, italic, etc.
+}
+
+// Now you can use the font in your SCSS styles
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+}
