@@ -32,6 +32,7 @@ const productSlice = createSlice({
       .addCase(fetchAllProduct.rejected, (state) => {
         console.log("Error state: ", state);
         state.isLoading = false;
+        state.error = "somthing wait wrong!";
       });
   },
   reducers: {},

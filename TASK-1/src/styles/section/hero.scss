@@ -1,0 +1,26 @@
+@use '../_variables' as var;
+
+.hero-product-card {
+    display: flex;
+    gap: 3rem;
+
+    .hero-product-card-img {
+        // background-color: aquamarine;
+        min-width: 200px;
+        max-width: 200px;
+    }
+
+    .hero-product-card-info{
+        
+        .price {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            color: var.$secondry-color;
+            float: right;
+            padding-bottom: 1rem;
+            border-bottom: 1.5px solid rgb(83, 83, 83);
+            letter-spacing: 1.2px;
+        }
+    }
+}

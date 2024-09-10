@@ -1,3 +1,15 @@
-.parallax-info-container {
-    background-color: aquamarine;
+.parallax-container {
+    display: flex;
+    width: 100%;
+
+    .parallax-info-container {
+        width: 50%;
+        margin-left: 6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    .parallax-img {
+        width: 50%;
+    }
 }

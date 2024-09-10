@@ -27,5 +27,5 @@ export interface IProductPagination {
   previous: () => void;
   randomPage: (pageNumber: number) => void;
   numberOfPage: number[];
-  state: TProductReduxState;
+  products: IProduct[];
 }
