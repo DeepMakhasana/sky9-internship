@@ -1,6 +1,6 @@
-import ParallaxContainer from "../components/home/ParallaxContainer";
+import Hero from "../components/home/Hero";
 import "../styles/section/hero.scss";
 
-export const Hero = () => {
-  return <ParallaxContainer />;
+export const HeroSection = () => {
+  return <Hero />;
 };

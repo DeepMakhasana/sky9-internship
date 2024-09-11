@@ -1,7 +1,13 @@
 import { useEffect } from "react";
-import { Hero } from "../sections";
 import { useAppDispatch } from "../store";
 import { fetchAllProduct } from "../store/slice/products";
+import {
+  HeroSection,
+  ServicesSection,
+  ProductSection,
+  AboutSection,
+  ContactSection,
+} from "../sections";
 
 export const Home = () => {
   const dispatch = useAppDispatch();
@@ -12,7 +18,11 @@ export const Home = () => {
   return (
     <>
       {/* sections */}
-      <Hero />
+      <HeroSection />
+      <ServicesSection />
+      <ProductSection />
+      <AboutSection />
+      <ContactSection />
     </>
   );
 };

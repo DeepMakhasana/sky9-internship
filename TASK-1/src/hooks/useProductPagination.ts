@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAppSelector } from "../store";
-import {
-  IProduct,
-  IProductPagination,
-  TProductReduxState,
-} from "../types/products";
+import { IProduct, IProductPagination } from "../types/products";
 
 export const useProductPagination = (limit: number): IProductPagination => {
   const productData = useAppSelector((state) => state.product);
@@ -19,12 +15,12 @@ export const useProductPagination = (limit: number): IProductPagination => {
 
   // set the next page
   const next = () => {
-    setPage((pre) => pre + 1);
+    setPage((pre) => (total > pre ? pre + 1 : pre));
   };
 
   // set the previous page
   const previous = () => {
-    setPage((pre) => pre + 1);
+    setPage((pre) => (pre > 1 ? pre - 1 : pre));
   };
 
   // set any seleted page throgh page number
@@ -41,7 +37,7 @@ export const useProductPagination = (limit: number): IProductPagination => {
   const handelPagination = () => {
     if (page && page > 1) {
       const start = (page - 1) * limit;
-      const end = (page - 1) * limit + 5;
+      const end = (page - 1) * limit + limit;
       setPaginationData(() => products.slice(start, end));
     } else {
       setPaginationData(() => products.slice(0, limit));
@@ -58,5 +54,6 @@ export const useProductPagination = (limit: number): IProductPagination => {
     randomPage,
     numberOfPage,
     products: paginationData,
+    page,
   };
 };

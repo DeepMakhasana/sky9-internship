@@ -28,4 +28,5 @@ export interface IProductPagination {
   randomPage: (pageNumber: number) => void;
   numberOfPage: number[];
   products: IProduct[];
+  page: number;
 }

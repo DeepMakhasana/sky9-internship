@@ -1,6 +1,7 @@
 .parallax-container {
     display: flex;
     width: 100%;
+    gap: 3rem;
 
     .parallax-info-container {
         width: 50%;
@@ -11,5 +12,22 @@
     }
     .parallax-img {
         width: 50%;
+        height: 100vh;
+        position: sticky;
+        top: 0;
     }
+
+    .parallax-img img {
+        height: 100%;
+    }
+
+    // .hero-bg-img {
+    //     background-image: url("../../assets/images/services.jpg");
+    //     background-attachment: fixed;
+    //     // background-position: right center;
+    //     background-repeat: no-repeat;
+    //     // background-size: cover;
+    //     // object-fit: cover;
+    //     height: auto;
+    // }
 }
