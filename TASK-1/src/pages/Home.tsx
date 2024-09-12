@@ -17,11 +17,15 @@ export const Home = () => {
   }, []);
   return (
     <>
-      {/* sections */}
+      {/* Hero sections */}
       <HeroSection />
+      {/* Services sections */}
       <ServicesSection />
-      <ProductSection />
+      {/* Product sections */}
+      <ProductSection paginationLimit={8} />
+      {/* sections */}
       <AboutSection />
+      {/* sections */}
       <ContactSection />
     </>
   );

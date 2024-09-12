@@ -1,5 +1,5 @@
-import React from "react";
+import { ProductSection } from "../sections";
 
 export const Product = () => {
-  return <div>Product</div>;
+  return <ProductSection paginationLimit={12} />;
 };

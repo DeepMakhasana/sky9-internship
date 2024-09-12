@@ -10,8 +10,8 @@ const Hero = () => {
   if (products.length == 0) return <p>Loading..</p>;
 
   return (
-    <ParallaxContainer>
-      <div className="parallax-info-container">
+    <ParallaxContainer id="hero">
+      <div className="parallax-info-container hero-section">
         {products?.map((product) => (
           <HeroProductCard key={product.id} product={product} />
         ))}

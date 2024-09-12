@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { IProduct } from "../../types/products";
 
 const ProductCard = ({ product }: { product: IProduct }) => {
@@ -18,17 +19,22 @@ const ProductCard = ({ product }: { product: IProduct }) => {
   }
   return (
     <div className="product-card-container">
-      <div className="product-card">
-        <div className="product-card-img">
-          <img src={product.image} alt="produt" />
+      <Link
+        to={`/products/${product.id}`}
+        style={{ textDecoration: "none", width: "fit-contant" }}
+      >
+        <div className="product-card">
+          <div className="product-card-img">
+            <img src={product.image} alt="produt" />
+          </div>
+          <div className="overlay">
+            <h4 className="product-title">
+              {extendFirstFourWords(product.title)}
+            </h4>
+            <div className="product-price">Price: ${product.price}</div>
+          </div>
         </div>
-        <div className="overlay">
-          <h4 className="product-title">
-            {extendFirstFourWords(product.title)}
-          </h4>
-          <div className="product-price">Price: ${product.price}</div>
-        </div>
-      </div>
+      </Link>
     </div>
   );
 };

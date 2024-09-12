@@ -4,10 +4,10 @@ import AboutImage from "../../assets/images/about.jpg";
 
 const About = () => {
   return (
-    <ParallaxContainer>
+    <ParallaxContainer id="about">
       <div
         className="parallax-info-container"
-        style={{ gap: "0", padding: "4rem 2rem" }}
+        style={{ gap: "0", padding: "8rem 2rem" }}
       >
         <h2>About Us</h2>
         <p>

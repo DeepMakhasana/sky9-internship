@@ -6,7 +6,7 @@ import goalIcon from "../../assets/icons/goal.svg";
 
 const Services = () => {
   return (
-    <ParallaxContainer>
+    <ParallaxContainer id="services">
       <div className="parallax-info-container">
         <div className="service-info">
           <h2>Our Services</h2>

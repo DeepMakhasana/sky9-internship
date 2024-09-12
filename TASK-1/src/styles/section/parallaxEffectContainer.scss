@@ -1,33 +1,51 @@
+@use "../_variables" as var;
+
 .parallax-container {
     display: flex;
     width: 100%;
-    gap: 3rem;
+    // gap: 3rem;
+    @media (max-width: 1120px) {
+        flex-direction: column-reverse;
+        gap: 3rem;
+    }
 
     .parallax-info-container {
         width: 50%;
-        margin-left: 6rem;
+        // margin-left: 6rem;
+        padding: 0 3rem 0 6rem;
         display: flex;
         flex-direction: column;
         gap: 4rem;
+        background-color: var.$bg-primary-color;
+        @media (max-width: 1120px) {
+            width: 100%;
+            z-index: 2;
+            padding: 2rem;
+        }
     }
     .parallax-img {
         width: 50%;
         height: 100vh;
         position: sticky;
         top: 0;
+        
+        @media (max-width: 1120px) {
+            z-index: 1;
+            // position: static;
+            width: 100%;
+        }
     }
 
     .parallax-img img {
         height: 100%;
+        width: 100%;
     }
 
-    // .hero-bg-img {
-    //     background-image: url("../../assets/images/services.jpg");
-    //     background-attachment: fixed;
-    //     // background-position: right center;
-    //     background-repeat: no-repeat;
-    //     // background-size: cover;
-    //     // object-fit: cover;
-    //     height: auto;
-    // }
+}
+
+.hero-section {
+    margin-top: 10rem;
+    @media (max-width: 1120px) {
+        margin-top: 4rem;
+    }
 }

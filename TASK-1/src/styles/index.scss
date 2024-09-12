@@ -1,5 +1,5 @@
 @use '_variables' as var;
-
+@import '_mixins';
 @import 'fonts';
 
 * {
@@ -48,10 +48,53 @@ img {
     font-weight: 500;
     letter-spacing: 1.2px;
     font-size: 1.125rem;
+    &:hover {
+        border: 1px solid var.$text-primary-color;
+    }
 }
 
 .loading {
     color: var.$text-secondry-color;
+}
+
+// navigation bar
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    
+    @media (max-width: 1120px) {
+        display: none;
+    }
+    
+    nav {
+        width: 50%;
+        background-color: var.$bg-secondry-color;
+        padding: 2.2rem;
+        @include flex-center;
+    }
+
+    ul {
+        display: flex;
+        gap: 3rem;
+
+        @media (max-width: 1320px) {
+            gap: 2rem;
+        }
+    }
+
+    li {
+        list-style: none;
+        color: var.$text-primary-color;
+        transition: color 0.15s ease-in;
+        font-size: 1.2rem;
+        cursor: pointer;
+
+        &:hover {
+            color: var.$primary-color;
+        }
+    }
 }
 
 form {
@@ -60,18 +103,18 @@ form {
     flex-direction: column;
     margin: 2rem 0;
     color: #fff;
-}
 
-input, textarea {
-    background-color: var.$bg-primary-color;
-    border: none;
-    border-bottom: 1px solid var.$text-primary-color;
-    padding: 1.5rem 0.5rem;
-    font-size: 1.125rem;
-    color: var.$text-secondry-color;
-
-    &:focus {
+    input, textarea {
+        background-color: var.$bg-primary-color;
         border: none;
+        border-bottom: 1px solid var.$text-primary-color;
+        padding: 1.5rem 0.5rem;
+        font-size: 1.125rem;
+        color: var.$text-secondry-color;
+
+        &:focus {
+            border: none;
+        }
     }
 }
 

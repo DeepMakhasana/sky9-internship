@@ -1,14 +1,36 @@
 import Button from "../button";
 import ParallaxContainer from "./ParallaxContainer";
 import ContactImage from "../../assets/images/contact.jpg";
+import { FormEvent, useState } from "react";
+import { insertProduct } from "../../api/products/post";
 
 const Contact = () => {
   const year = new Date().getFullYear();
+  const [isLoading, setIsLoading] = useState(false);
+
+  // contact form handling
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+    const form = new FormData(e.currentTarget);
+
+    const title = form.get("title") as string;
+    const price = Number(form.get("price"));
+    const description = form.get("description") as string;
+
+    // post request
+    const response = await insertProduct({ title, price, description });
+    setIsLoading(false);
+    alert(
+      response?.id ? "Product add successfully." : "Some thing wait wrong!"
+    );
+  };
+
   return (
-    <ParallaxContainer>
+    <ParallaxContainer id="contact">
       <div
         className="parallax-info-container"
-        style={{ gap: "0", padding: "6rem 2rem 0 2rem" }}
+        style={{ gap: "0", padding: "8rem 2rem 0 2rem" }}
       >
         <h2>Contact Us</h2>
         <p>
@@ -17,17 +39,24 @@ const Contact = () => {
           condimentum.
         </p>
         {/* contact form */}
-        <form method="post">
-          <input type="text" name="name" placeholder="Name" />
-          <input type="email" name="email" placeholder="Email" />
+        <form method="post" onSubmit={handleSubmit}>
+          <input type="text" name="title" placeholder="Title" />
+          <input type="number" name="price" placeholder="Price" />
           <textarea
-            name="message"
-            id="message"
+            name="description"
+            id="Descriptioin"
             placeholder="Message"
             rows={5}
           ></textarea>
+          <div className="btn-wrraper">
+            <input
+              type="submit"
+              value={isLoading ? "Sending..." : "Send"}
+              className="btn"
+            />
+          </div>
         </form>
-        <Button text="Context Us" link="/" />
+        {/* <Button text="Context Us" link="/" /> */}
         <p style={{ paddingTop: "6rem", fontSize: "1rem" }}>
           Copyright {`${year}`} Sky 9 It Craft Company - Design: Deep Makhasana
         </p>

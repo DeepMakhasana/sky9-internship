@@ -1,9 +1,9 @@
 import { useProductPagination } from "../../hooks/useProductPagination";
 import ProductCard from "./ProductCard";
 
-const Product = () => {
+const Product = ({ paginationLimit }: { paginationLimit: number }) => {
   const { products, numberOfPage, next, previous, randomPage, page } =
-    useProductPagination(8);
+    useProductPagination(paginationLimit);
 
   if (products.length == 0) return <p className="loading">Loading...</p>;
   return (
