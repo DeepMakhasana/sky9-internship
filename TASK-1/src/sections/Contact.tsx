@@ -1,4 +1,4 @@
-import Contact from "../components/home/contact";
+import Contact from "../components/home/Contact";
 
 export const ContactSection = () => {
   return <Contact />;

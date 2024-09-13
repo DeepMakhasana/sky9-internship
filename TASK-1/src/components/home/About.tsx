@@ -6,8 +6,8 @@ const About = () => {
   return (
     <ParallaxContainer id="about">
       <div
-        className="parallax-info-container"
-        style={{ gap: "0", padding: "8rem 2rem" }}
+        className="parallax-info-container about-container"
+        style={{ gap: "0" }}
       >
         <h2>About Us</h2>
         <p>

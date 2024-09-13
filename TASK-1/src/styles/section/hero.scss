@@ -4,6 +4,10 @@
     display: flex;
     gap: 1.5rem;
 
+    @media (max-width: 520px) {
+        flex-direction: column;
+    }
+
     .hero-product-card-img {
         // background-color: aquamarine;
         min-width: 200px;

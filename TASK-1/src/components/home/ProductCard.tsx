@@ -18,11 +18,12 @@ const ProductCard = ({ product }: { product: IProduct }) => {
     }
   }
   return (
-    <div className="product-card-container">
-      <Link
-        to={`/products/${product.id}`}
-        style={{ textDecoration: "none", width: "fit-contant" }}
-      >
+    <Link
+      to={`/products/${product.id}`}
+      style={{ textDecoration: "none", width: "fit-contant" }}
+      className="product-link-container"
+    >
+      <div className="product-card-container">
         <div className="product-card">
           <div className="product-card-img">
             <img src={product.image} alt="produt" />
@@ -34,8 +35,8 @@ const ProductCard = ({ product }: { product: IProduct }) => {
             <div className="product-price">Price: ${product.price}</div>
           </div>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 

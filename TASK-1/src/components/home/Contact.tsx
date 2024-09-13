@@ -1,4 +1,3 @@
-import Button from "../button";
 import ParallaxContainer from "./ParallaxContainer";
 import ContactImage from "../../assets/images/contact.jpg";
 import { FormEvent, useState } from "react";
@@ -29,8 +28,8 @@ const Contact = () => {
   return (
     <ParallaxContainer id="contact">
       <div
-        className="parallax-info-container"
-        style={{ gap: "0", padding: "8rem 2rem 0 2rem" }}
+        className="parallax-info-container contact-container"
+        style={{ gap: "0", paddingBottom: "0" }}
       >
         <h2>Contact Us</h2>
         <p>

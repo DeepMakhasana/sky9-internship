@@ -6,6 +6,10 @@
     display: flex;
     gap: 2rem;
     margin-top: 1rem;
+
+    @media (max-width: 520px) {
+        flex-direction: column;
+    }
 }
 
 .services-info img {
