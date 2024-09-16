@@ -3,22 +3,65 @@ import ContactImage from "../../assets/images/contact.jpg";
 import { FormEvent, useState } from "react";
 import { insertProduct } from "../../api/products/post";
 
+const initalError = {
+  title: "",
+  price: "",
+  description: "",
+};
+
 const Contact = () => {
   const year = new Date().getFullYear();
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(initalError);
 
   // contact form handling
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setError(initalError);
     setIsLoading(true);
     const form = new FormData(e.currentTarget);
 
-    const title = form.get("title") as string;
-    const price = Number(form.get("price"));
-    const description = form.get("description") as string;
+    const payload = {
+      title: form.get("title") as string,
+      price: Number(form.get("price")),
+      description: form.get("description") as string,
+    };
+
+    // validation
+    for (const key in payload) {
+      if (
+        typeof payload[key as keyof typeof payload] === "string" &&
+        payload[key as keyof typeof payload] == ""
+      ) {
+        setError((pre) => {
+          const data = {
+            ...pre,
+            [key as keyof typeof payload]: `${key} is required.`,
+          };
+          return data;
+        });
+        setIsLoading(false);
+        return;
+      } else {
+        if (
+          payload[key as keyof typeof payload] == 0 ||
+          payload[key as keyof typeof payload] == ""
+        ) {
+          setError((pre) => {
+            const data = {
+              ...pre,
+              [key as keyof typeof payload]: `${key} is required.`,
+            };
+            return data;
+          });
+          setIsLoading(false);
+          return;
+        }
+      }
+    }
 
     // post request
-    const response = await insertProduct({ title, price, description });
+    const response = await insertProduct(payload);
     setIsLoading(false);
     alert(
       response?.id ? "Product add successfully." : "Some thing wait wrong!"
@@ -40,13 +83,17 @@ const Contact = () => {
         {/* contact form */}
         <form method="post" onSubmit={handleSubmit}>
           <input type="text" name="title" placeholder="Title" />
+          <span>{error.title && error.title}</span>
           <input type="number" name="price" placeholder="Price" />
+          <span>{error.price && error.price}</span>
           <textarea
             name="description"
             id="Descriptioin"
             placeholder="Message"
             rows={5}
           ></textarea>
+          <span>{error.description && error.description}</span>
+
           <div className="btn-wrraper">
             <input
               type="submit"
