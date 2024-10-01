@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { RecipesContext } from "./recipes-context.tsx";
 import { RecipesDataType } from "./type.ts";
 import { Axios } from "../../utils/axios.ts";
@@ -105,6 +105,14 @@ export const RecipesProvider = ({
     setError(data.message);
     setIsLoading(false);
   }, []);
+
+  useEffect(() => {
+    setPage(0);
+  }, [getByTag, getByMealType, searchByRecipeName, sortRecipes]);
+
+  useEffect(() => {
+    console.log("recipes data: ", recipesData);
+  }, [recipesData]);
 
   const memorizeRecipes = useMemo(
     () => ({

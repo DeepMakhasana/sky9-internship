@@ -11,7 +11,7 @@ const Favourite = () => {
         <p className="text-center">No any favourite quotes.</p>
       )}
       {favouriteQuotes.map((quote) => (
-        <Quote quote={quote} isDeleteable={true} />
+        <Quote key={quote.id} quote={quote} isDeleteable={true} />
       ))}
     </div>
   );

@@ -3,6 +3,7 @@ import Favourite from "./pages/Favourite";
 import Layout from "./Layout";
 import Home from "./pages/Home";
 import ErrorPage from "./error/ErrorPage";
+import Test from "./pages/Test";
 
 function App() {
   const router = createBrowserRouter([
@@ -18,6 +19,10 @@ function App() {
         {
           path: "/favourites",
           element: <Favourite />,
+        },
+        {
+          path: "/test",
+          element: <Test />,
         },
       ],
     },

@@ -134,7 +134,9 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
     const userData = res?.data;
 
-    setLocalStorage(STORAGE_KEY, userData.token);
+    console.log("userData token", userData);
+
+    setLocalStorage(STORAGE_KEY, userData.accessToken);
     setLocalStorage(USERDATA_STORAGE_KEY, userData);
 
     dispatch({

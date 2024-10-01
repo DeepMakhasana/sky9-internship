@@ -25,7 +25,9 @@ const favouriteQuote = createSlice({
         console.log("Pending state: ", state);
       })
       .addCase(fetchoneRandomQuote.fulfilled, (state, action) => {
-        state.push(action.payload);
+        if (state.length <= 0) {
+          state.push(action.payload);
+        }
       })
       .addCase(fetchoneRandomQuote.rejected, (state) => {
         console.log("Error state: ", state);

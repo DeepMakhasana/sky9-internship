@@ -27,6 +27,8 @@ const Home = () => {
       });
   }, [readCount]);
 
+  console.log("main home page");
+
   return (
     <div
       className="flex justify-center items-end flex-col gap-4"

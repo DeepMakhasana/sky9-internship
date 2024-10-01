@@ -15,6 +15,8 @@ const FavouriteQuote = ({
   const dispatch = useAppDispatch();
   const favouriteIconRef: any = useRef<HTMLButtonElement>();
 
+  console.log("favourite action btn component");
+
   const handelFavouriteIcon = () => {
     if (favouriteIconRef.current.style.color == "gray") {
       favouriteIconRef.current.style.color = "black";
